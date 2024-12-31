@@ -1,0 +1,13 @@
+// filepath: /C:/Users/Grant Schaures/Desktop/hyperchill-extension/tsconfig.json
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["dom", "es6"],
+    "types": ["chrome"],
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true
+  },
+  "include": ["src"]
+}

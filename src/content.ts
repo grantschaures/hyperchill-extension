@@ -1,0 +1,1 @@
+console.log("Hyperchill Website Blocker content script loaded.");

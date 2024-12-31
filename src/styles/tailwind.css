@@ -1,0 +1,5 @@
+/* These directives tell Tailwind CSS to include its base styles, component styles, and utility styles */
+/* These directives are processed by the tailwindcss plugin in postcss.config.js */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
