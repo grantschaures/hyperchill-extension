@@ -46,7 +46,8 @@ module.exports = {
         { from: 'src/manifest.json', to: 'manifest.json' },
         { from: 'src/icons', to: 'icons' }, // Icons folder
         { from: 'src/popup.html', to: 'popup.html' }, // Popup HTML
-        { from: 'src/options.html', to: 'options.html' } // Options HTML
+        { from: 'src/options.html', to: 'options.html' }, // Options HTML
+        { from: 'src/styles/custom.css', to: 'custom.css' } // Custom CSS
       ]
     }),
     new MiniCssExtractPlugin({

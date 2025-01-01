@@ -12,5 +12,3 @@ async function fetchFromBackend(endpoint: string) {
   const response = await fetch(`https://hyperchill.io/api/${endpoint}`);
   return response.json();
 }
-
-// I'll figure this out tomorrow a
