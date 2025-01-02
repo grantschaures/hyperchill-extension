@@ -1,0 +1,24 @@
+@font-face {
+    font-family: myFontPlain;
+    src: url("../fonts/CPMono_v07_Plain.woff") format('woff');
+}
+
+@font-face {
+    font-family: myFontBold;
+    src: url("../fonts/CPMono_v07_Bold.woff") format('woff');
+}
+
+@font-face {
+    font-family: myFontLight;
+    src: url("../fonts/CPMono_v07_Light.woff") format('woff');
+}
+
+@font-face {
+    font-family: settingsHeaderFont;
+    src: url("../fonts/TTNormsProRegular.otf") format('woff');
+}
+
+@font-face {
+    font-family: settingsHeaderFontBold;
+    src: url("../fonts/TTNormsProBold.otf") format('woff');
+}

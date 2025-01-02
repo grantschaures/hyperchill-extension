@@ -1,18 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const blockButton = document.getElementById('blockButton') as HTMLButtonElement;
+  const optionsBtn = document.getElementById('optionsBtn') as HTMLButtonElement | null;
 
-  blockButton.addEventListener('click', () => {
-    blockSite();
-  });
-
-  function blockSite(): void {
-      const siteUrl = prompt('Enter the URL of the site to block:');
-      if (siteUrl) {
-          // Logic to block the site
-          console.log(`Blocking site: ${siteUrl}`);
-          alert(`Site ${siteUrl} has been blocked.`);
-      } else {
-          alert('No URL entered. Please try again.');
-      }
+  if (optionsBtn) {
+    optionsBtn.addEventListener('click', () => {
+      chrome.runtime.openOptionsPage(() => {
+        if (chrome.runtime.lastError) {
+          console.error(chrome.runtime.lastError);
+        }
+      });
+    });
+  } else {
+    console.error('Element with ID "optionsBtn" not found.');
   }
 });

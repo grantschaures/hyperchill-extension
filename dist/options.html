@@ -1,18 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Hyperchill Website Blocker Options</title>
-  <link rel="stylesheet" href="tailwind.css">
-</head>
-<body>
-  <div id="app">
-    <h1 class="text-2xl font-bold text-blue-500 p-4 border-2 border-red-500">Hyperchill Website Blocker Options</h1>
-    <p>Welcome to the options page for the Hyperchill Website Blocker</p>
-  </div>
-  <div>
-    <img id="testBtn" src="icons/icon128.png">
-  </div>
-  <script src="options.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Options</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="fonts.css">
+  </head>
+  <body class="w-screen h-screen flex justify-center items-center">
+    <div id="main-options-container" class="w-[750px] h-[600px] shadow-2xl rounded-[15px]">
+      <div id="header" class="flex justify-center items-center px-2 p-2">
+        <img id="testBtn" src="icons/icon48.png" class="w-8 h-8">
+        <h1 class="text-lg font-bold text-black p-2 font-settingsHeaderFont">Hyperchill Website Blocker</h1>
+      </div>
+      <hr>
+      <div id="contents" class=" w-full h-[calc(100%-64px)]">
+        <div id="home-contents" class="flex w-full h-full justify-center items-center">
+          <div id="home-contents-main" class="flex w-full justify-around">
+            <div id="hyperchill-sync-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300">
+              <div id="hyperchill-sync-module-title" class="text-center">
+              <b>Hyperchill.io Sync</b>
+              </div>
+              <hr class="my-1">
+              <div id="hyperchill-sync-module-description">
+              Conditionally block sites based on current session running in Hyperchill.io
+              </div>
+            </div>
+            <div id="all-time-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300">
+              <div id="all-time-module-title" class="text-center">
+                <b>All Time</b>
+              </div>
+              <hr class="my-1">
+              <div id="all-time-module-description">
+                Block sites at all times
+              </div>
+            </div>
+            <div id="custom-time-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300">
+              <div id="custom-time-module-title" class="text-center">
+                <b>Custom Time</b>
+              </div>
+              <hr class="my-1">
+              <div id="custom-time-module-description">
+                Block sites during custom time spans
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="hyperchill-sync-contents">
+
+        </div>
+        <div id="all-time-contents">
+
+        </div>
+        <div id="custom-time-contents">
+
+        </div>
+      </div>
+    </div>
+    <script src="options.js"></script>
+  </body>
 </html>

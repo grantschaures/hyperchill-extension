@@ -47,7 +47,9 @@ module.exports = {
         { from: 'src/icons', to: 'icons' }, // Icons folder
         { from: 'src/popup.html', to: 'popup.html' }, // Popup HTML
         { from: 'src/options.html', to: 'options.html' }, // Options HTML
-        { from: 'src/styles/custom.css', to: 'custom.css' } // Custom CSS
+        { from: 'src/styles/custom.css', to: 'custom.css' }, // Custom CSS
+        { from: 'src/fonts', to: 'fonts' }, // Fonts folder
+        { from: 'src/styles/fonts.css', to: 'fonts.css'}
       ]
     }),
     new MiniCssExtractPlugin({
