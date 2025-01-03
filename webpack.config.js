@@ -43,7 +43,7 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'src/manifest.json', to: 'manifest.json' },
+        { from: 'manifest.json', to: 'manifest.json' },
         { from: 'src/icons', to: 'icons' }, // Icons folder
         { from: 'src/popup.html', to: 'popup.html' }, // Popup HTML
         { from: 'src/options.html', to: 'options.html' }, // Options HTML

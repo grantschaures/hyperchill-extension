@@ -15,10 +15,10 @@
 
 @font-face {
     font-family: settingsHeaderFont;
-    src: url("../fonts/TTNormsProRegular.otf") format('woff');
+    src: url("../fonts/TTNormsProRegular.otf") format('otf');
 }
 
 @font-face {
     font-family: settingsHeaderFontBold;
-    src: url("../fonts/TTNormsProBold.otf") format('woff');
+    src: url("../fonts/TTNormsProBold.otf") format('otf');
 }

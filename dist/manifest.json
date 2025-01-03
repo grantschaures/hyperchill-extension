@@ -5,21 +5,21 @@
   "description": "Blocks distracting websites and interacts with hyperchill.io backend.",
   "permissions": ["storage", "webRequest", "webRequestBlocking", "activeTab", "tabs"],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "dist/background.js"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["dist/content.js"]
     }
   ],
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "dist/popup.html",
     "default_icon": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
+      "16": "dist/icons/icon16.png",
+      "48": "dist/icons/icon48.png",
+      "128": "dist/icons/icon128.png"
     }
   },
-  "options_page": "options.html"
+  "options_page": "dist/options.html"
 }
