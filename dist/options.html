@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <title>Options</title>
     <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="fonts.css">
   </head>
   <body class="w-screen h-screen flex justify-center items-center">
-    <div id="main-options-container" class="w-[750px] h-[600px] shadow-2xl rounded-[15px]">
+    <div id="main-options-container" class="w-[760px] h-[600px] shadow-2xl rounded-[15px] bg-white">
       <div id="header" class="flex justify-center items-center px-2 p-2">
-        <img id="testBtn" src="icons/icon48.png" class="w-8 h-8">
-        <h1 class="text-lg font-bold text-black p-2 font-settingsHeaderFont">Hyperchill Website Blocker</h1>
+        <img id="hyperchill-icon" src="icons/icon48.png" class="w-8 h-8">
+        <h1 class="text-2xl font-bold text-black p-2 font-settingsHeaderFont">Hyperchill Website Blocker</h1>
       </div>
-      <hr>
-      <div id="contents" class=" w-full h-[calc(100%-64px)]">
+
+      <hr class="mx-4">
+
+      <div id="contents" class=" w-full h-[calc(100%-64px)] font-settingsHeaderFont p-2">
+
+
+
         <div id="home-contents" class="flex w-full h-full justify-center items-center">
           <div id="home-contents-main" class="flex w-full justify-around">
             <div id="hyperchill-sync-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300">
@@ -45,15 +51,140 @@
             </div>
           </div>
         </div>
-        <div id="hyperchill-sync-contents">
 
-        </div>
-        <div id="all-time-contents">
 
-        </div>
-        <div id="custom-time-contents">
 
+        <div id="hyperchill-sync-contents" class="hidden w-full h-full justify-center flex-col">
+          <div class="nav-bar flex items-center w-full justify-between p-2">
+            <img src="icons/left-arrow-261369.png" class="back-btn w-8 h-8 transition-transform duration-300 ease-in-out transform hover:-translate-x-1 cursor-pointer">
+            <div class="text-xl">Hyperchill.io Sync</div>
+          </div>
+          <div id="hyperchill-sync-contents-menu" class="flex w-full h-full justify-around items-center">
+            <div id="hyperchill-sync-contents-module-container" class="flex w-full justify-center">
+              <div id="hyperchill-sync-websites-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300 mr-6">
+                <div id="hyperchill-sync-websites-module-title" class="text-center">
+                  <b>Websites</b>
+                </div>
+                <hr class="my-1">
+                <div id="hyperchill-sync-websites-blocked">
+                  0 Sites Blocked
+                </div>
+              </div>
+              <div id="hyperchill-sync-categories-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300">
+                <div id="hyperchill-sync-categories-module-title" class="text-center">
+                  <b>Categories</b>
+                </div>
+                <hr class="my-1">
+                <div id="hyperchill-sync-categories-blocked">
+                  0 Categories Blocked
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div id="all-time-contents" class="hidden w-full h-full justify-center flex-col">
+          <div class="nav-bar flex items-center w-full justify-between p-2">
+            <img src="icons/left-arrow-261369.png" class="back-btn w-8 h-8 transition-transform duration-300 ease-in-out transform hover:-translate-x-1 cursor-pointer">
+            <div class="text-xl">All Time</div>
+          </div>
+          <div id="all-time-contents-menu" class="flex w-full h-full justify-around items-center">
+            <div id="all-time-contents-module-container" class="flex w-full justify-center">
+              <div id="all-time-websites-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300 mr-6">
+                <div id="all-time-websites-module-title" class="text-center">
+                  <b>Websites</b>
+                </div>
+                <hr class="my-1">
+                <div id="all-time-websites-blocked">
+                  0 Sites Blocked
+                </div>
+              </div>
+              <div id="all-time-categories-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300">
+                <div id="all-time-categories-module-title" class="text-center">
+                  <b>Categories</b>
+                </div>
+                <hr class="my-1">
+                <div id="all-time-categories-blocked">
+                  0 Categories Blocked
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="custom-time-contents" class="hidden w-full h-full justify-center flex-col">
+          <div class="nav-bar flex items-center w-full justify-between p-2">
+            <img src="icons/left-arrow-261369.png" class="back-btn w-8 h-8 transition-transform duration-300 ease-in-out transform hover:-translate-x-1 cursor-pointer">
+            <div class="text-xl">Custom Time</div>
+          </div>
+          <div id="custom-time-contents-menu" class="flex w-full h-full justify-around items-center">
+            <div id="custom-time-contents-module-container" class="flex w-full justify-center">
+              <div id="custom-time-websites-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300 mr-6">
+                <div id="custom-time-websites-module-title" class="text-center">
+                  <b>Websites</b>
+                </div>
+                <hr class="my-1">
+                <div id="custom-time-websites-blocked">
+                  0 Sites Blocked
+                </div>
+              </div>
+              <div id="custom-time-categories-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300">
+                <div id="custom-time-categories-module-title" class="text-center">
+                  <b>Categories</b>
+                </div>
+                <hr class="my-1">
+                <div id="custom-time-categories-blocked">
+                  0 Categories Blocked
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="blocked-page" class="hidden w-full h-full justify-center flex-col">
+          <div class="nav-bar flex items-center w-full justify-between p-2">
+            <img id="blocked-page-back-btn" src="icons/left-arrow-261369.png" class="back-btn w-8 h-8 transition-transform duration-300 ease-in-out transform hover:-translate-x-1 cursor-pointer">
+            <div id="blocked-page-type" class="text-xl"></div>
+          </div>
+          <div id="blocked-page-contents" class="flex w-full h-full border-4 border-blue-500 border-opacity-0 flex-col">
+
+            <div class="flex justify-center text-base py-4">
+              <input id="website-input" type="text" placeholder="example.com" class="border p-2 rounded-l-md w-64">
+              <button id="block-website-btn" class="bg-[#700cce] text-white p-2 rounded-r-md">Block</button>
+            </div>
+
+            <div class="w-full h-full py-4 text-lg border-4 rounded-[15px]">
+              <div class="grid grid-cols-3 gap-4 text-center font-bold mb-2">
+                <div>Website</div>
+                <div>Time Since Blocked</div>
+                <div>Remove</div>
+              </div>
+              <div id="blocked-websites-list" class="grid grid-cols-3 gap-4 text-center">
+                <div>example1.com</div>
+                <div>2 hours</div>
+                <div><button class="remove-btn bg-red-500 text-white p-1 rounded">Remove</button></div>
+                <div>example2.com</div>
+                <div>5 hours</div>
+                <div><button class="remove-btn bg-red-500 text-white p-1 rounded">Remove</button></div>
+                <div>example3.com</div>
+                <div>1 day</div>
+                <div><button class="remove-btn bg-red-500 text-white p-1 rounded">Remove</button></div>
+                <div>example4.com</div>
+                <div>3 days</div>
+                <div><button class="remove-btn bg-red-500 text-white p-1 rounded">Remove</button></div>
+                <div>example5.com</div>
+                <div>1 week</div>
+                <div><button class="remove-btn bg-red-500 text-white p-1 rounded">Remove</button></div>
+                <div>example6.com</div>
+                <div>2 weeks</div>
+                <div><button class="remove-btn bg-red-500 text-white p-1 rounded">Remove</button></div>
+              </div>
+            </div>
+
+          </div>
+          </div>
+        </div>
+
       </div>
     </div>
     <script src="options.js"></script>
