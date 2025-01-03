@@ -24,11 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Blocked page
     const blockedPageType = document.getElementById('blocked-page-type') as HTMLElement;
+    const websiteCategory = document.getElementById('website-category') as HTMLElement;
+    const websiteInputContainer = document.getElementById('website-input-container') as HTMLElement;
+    const categoryInputContainer = document.getElementById('category-input-container') as HTMLElement;
 
-    type BlockedPageElements = HTMLElement[];
-    const blockedPageElements: BlockedPageElements = [
-        blockedPageType
-    ];
+    type BlockedPageElements = {
+        blockedPageType: HTMLElement;
+        websiteCategory: HTMLElement;
+        websiteInputContainer: HTMLElement;
+        categoryInputContainer: HTMLElement;
+    };
+    
+    const blockedPageElements: BlockedPageElements = {
+        blockedPageType,
+        websiteCategory,
+        websiteInputContainer,
+        categoryInputContainer
+    };
 
     type ModulePair = [HTMLElement, HTMLElement];
     const modules: ModulePair[] = [
@@ -128,49 +140,65 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function populateHyperchillSyncWebsites(blockedPageElements: HTMLElement[]): void {
-        blockedPageElements[0].innerText = "Blocked Websites | Hyperchill.io Sync";
+    function populateHyperchillSyncWebsites(blockedPageElements: BlockedPageElements): void {
+        blockedPageElements.blockedPageType.innerText = "Blocked Websites | Hyperchill.io Sync";
+        blockedPageElements.websiteCategory.innerText = "Website";
+        showWebsiteInput(blockedPageElements);
     }
 
-    function populateHyperchillSyncCategories(blockedPageElements: HTMLElement[]): void {
-        blockedPageElements[0].innerText = "Blocked Categories | Hyperchill.io Sync";
+    function populateHyperchillSyncCategories(blockedPageElements: BlockedPageElements): void {
+        blockedPageElements.blockedPageType.innerText = "Blocked Categories | Hyperchill.io Sync";
+        blockedPageElements.websiteCategory.innerText = "Category";
+        showCategoryInput(blockedPageElements);
     }
 
-    function populateAllTimeWebsites(blockedPageElements: HTMLElement[]): void {
-        blockedPageElements[0].innerText = "Blocked Websites | All Time";
+    function populateAllTimeWebsites(blockedPageElements: BlockedPageElements): void {
+        blockedPageElements.blockedPageType.innerText = "Blocked Websites | All Time";
+        blockedPageElements.websiteCategory.innerText = "Website";
+        showWebsiteInput(blockedPageElements);
     }
 
-    function populateAllTimeCategories(blockedPageElements: HTMLElement[]): void {
-        blockedPageElements[0].innerText = "Blocked Categories | All Time";
+    function populateAllTimeCategories(blockedPageElements: BlockedPageElements): void {
+        blockedPageElements.blockedPageType.innerText = "Blocked Categories | All Time";
+        blockedPageElements.websiteCategory.innerText = "Category";
+        showCategoryInput(blockedPageElements);
     }
 
-    function populateCustomTimeWebsites(blockedPageElements: HTMLElement[]): void {
-        blockedPageElements[0].innerText = "Blocked Websites | Custom Time";
+    function populateCustomTimeWebsites(blockedPageElements: BlockedPageElements): void {
+        blockedPageElements.blockedPageType.innerText = "Blocked Websites | Custom Time";
+        blockedPageElements.websiteCategory.innerText = "Website";
+        showWebsiteInput(blockedPageElements);
     }
 
-    function populateCustomTimeCategories(blockedPageElements: HTMLElement[]): void {
-        blockedPageElements[0].innerText = "Blocked Categories | Custom Time";
+    function populateCustomTimeCategories(blockedPageElements: BlockedPageElements): void {
+        blockedPageElements.blockedPageType.innerText = "Blocked Categories | Custom Time";
+        blockedPageElements.websiteCategory.innerText = "Category";
+        showCategoryInput(blockedPageElements);
+    }
+
+    function showCategoryInput(blockedPageElements: BlockedPageElements): void {
+        blockedPageElements.websiteInputContainer.classList.replace('flex', 'hidden');
+        blockedPageElements.categoryInputContainer.classList.replace('hidden', 'flex');
+    }
+
+    function showWebsiteInput(blockedPageElements: BlockedPageElements): void {
+        blockedPageElements.categoryInputContainer.classList.replace('flex', 'hidden');
+        blockedPageElements.websiteInputContainer.classList.replace('hidden', 'flex');
     }
     
     // Deals with opening/ closing Hyperchill.io Sync, All Time, and Custom Time pages and the final Blocked Page
     function hideDisplayPage(hidePage: HTMLElement, displayPage: HTMLElement): void {
-        // Initial page hiding / revealing
-        hidePage.classList.remove('flex');
-        hidePage.classList.add('hidden');
-    
-        displayPage.classList.remove('hidden');
-        displayPage.classList.add('flex');
+        hidePage.classList.replace('flex', 'hidden');
+        displayPage.classList.replace('hidden', 'flex');
     }
     
     // Deals with showing/ hiding pages when initial modules are selected (e.g. Hyperchill.io Sync, All Time, and Custom Time)
     function displayContents(element: HTMLElement, contents: HTMLElement[], tempStorage: TempStorage): void {
         contents.forEach(content => {
             if (content === element) {
-                content.classList.remove('hidden');
-                content.classList.add('flex');
+                content.classList.replace('hidden', 'flex');
             } else {
-                content.classList.remove('flex');
-                content.classList.add('hidden');
+                content.classList.replace('flex', 'hidden');
             }
         });
     

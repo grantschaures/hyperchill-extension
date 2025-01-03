@@ -21,3 +21,20 @@ html {
         background-position: 0% 50%;
     }
 }
+
+.scrollbar-style::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollbar-style::-webkit-scrollbar:hover {
+    cursor: pointer;
+}
+
+.scrollbar-style::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0);
+}
+
+.scrollbar-style::-webkit-scrollbar-thumb {
+    background-color: rgb(107, 114, 128);
+    border-radius: 10px;
+}
