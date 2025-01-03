@@ -1,7 +1,7 @@
 {
     "name": "hyperchill-website-blocker",
     "version": "1.0.0",
-    "description": "A browser extension to block distracting websites and interact with hyperchill.io backend.",
+    "description": "A browser extension to block distracting websites and sync with Hyperchill.io web app",
     "main": "src/background.ts",
     "scripts": {
         "build": "webpack --watch",
