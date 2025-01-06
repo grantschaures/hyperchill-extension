@@ -1,3 +1,7 @@
+// Import statements
+import { updateBlockedPage } from "./content";
+import { TempStorage, tempStorage } from "./types"
+
 document.addEventListener('DOMContentLoaded', () => {
     const hyperchillSyncModule = document.getElementById('hyperchill-sync-module') as HTMLElement;
     const allTimeModule = document.getElementById('all-time-module') as HTMLElement;
@@ -62,17 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
         customTimeContents
     ];
 
-    // Holds the id of the most recently selected contents page
-    type TempStorage = { 
-        contentsId: string | null; 
-        blockedModuleId: string | null; 
-    };
-
-    const tempStorage: TempStorage = {
-        contentsId: null,
-        blockedModuleId: null
-    };
-
     hyperchillSyncModule.addEventListener('click', () => {
         displayContents(hyperchillSyncContents, contents, tempStorage);
     });
@@ -120,24 +113,22 @@ document.addEventListener('DOMContentLoaded', () => {
     function populateBlockedPage(modules: [HTMLElement, HTMLElement][], blockedPageElements: BlockedPageElements): void {
         // Hyperchill.io Sync Websites
         if (tempStorage.blockedModuleId === modules[0][0].id) {
-            console.log('Hyperchill.io Sync Websites');
             populateHyperchillSyncWebsites(blockedPageElements);
         } else if (tempStorage.blockedModuleId === modules[1][0].id) {
-            console.log('Hyperchill.io Sync Categories');
             populateHyperchillSyncCategories(blockedPageElements);
         } else if (tempStorage.blockedModuleId === modules[2][0].id) {
-            console.log('All Time Websites');
             populateAllTimeWebsites(blockedPageElements);
         } else if (tempStorage.blockedModuleId === modules[3][0].id) {
-            console.log('All Time Categories');
             populateAllTimeCategories(blockedPageElements);
         } else if (tempStorage.blockedModuleId === modules[4][0].id) {
-            console.log('Custom Time Websites');
             populateCustomTimeWebsites(blockedPageElements);
         } else if (tempStorage.blockedModuleId === modules[5][0].id) {
-            console.log('Custom Time Categories');
             populateCustomTimeCategories(blockedPageElements);
         }
+
+        updateBlockedPage(tempStorage); // Dynamically update blocked page w/ user-specific data
+
+        console.log(tempStorage.blockedModuleId)
     }
 
     function populateHyperchillSyncWebsites(blockedPageElements: BlockedPageElements): void {

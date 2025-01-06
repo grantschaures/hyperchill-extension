@@ -1,2 +1,25 @@
-(()=>{"use strict";document.addEventListener("DOMContentLoaded",(()=>{const e=document.getElementById("optionsBtn");e?e.addEventListener("click",(()=>{chrome.runtime.openOptionsPage((()=>{chrome.runtime.lastError&&console.error(chrome.runtime.lastError)}))})):console.error('Element with ID "optionsBtn" not found.')}))})();
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicG9wdXAuanMiLCJtYXBwaW5ncyI6Im1CQUNBQSxTQUFTQyxpQkFBaUIsb0JBQW9CLEtBQzFDLE1BQU1DLEVBQWFGLFNBQVNHLGVBQWUsY0FDdkNELEVBQ0FBLEVBQVdELGlCQUFpQixTQUFTLEtBQ2pDRyxPQUFPQyxRQUFRQyxpQkFBZ0IsS0FDdkJGLE9BQU9DLFFBQVFFLFdBQ2ZDLFFBQVFDLE1BQU1MLE9BQU9DLFFBQVFFLFVBQ2pDLEdBQ0YsSUFJTkMsUUFBUUMsTUFBTSwwQ0FDbEIsRyIsInNvdXJjZXMiOlsid2VicGFjazovL2h5cGVyY2hpbGwtd2Vic2l0ZS1ibG9ja2VyLy4vc3JjL3BvcHVwLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIlwidXNlIHN0cmljdFwiO1xuZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsICgpID0+IHtcbiAgICBjb25zdCBvcHRpb25zQnRuID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ29wdGlvbnNCdG4nKTtcbiAgICBpZiAob3B0aW9uc0J0bikge1xuICAgICAgICBvcHRpb25zQnRuLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgKCkgPT4ge1xuICAgICAgICAgICAgY2hyb21lLnJ1bnRpbWUub3Blbk9wdGlvbnNQYWdlKCgpID0+IHtcbiAgICAgICAgICAgICAgICBpZiAoY2hyb21lLnJ1bnRpbWUubGFzdEVycm9yKSB7XG4gICAgICAgICAgICAgICAgICAgIGNvbnNvbGUuZXJyb3IoY2hyb21lLnJ1bnRpbWUubGFzdEVycm9yKTtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9KTtcbiAgICAgICAgfSk7XG4gICAgfVxuICAgIGVsc2Uge1xuICAgICAgICBjb25zb2xlLmVycm9yKCdFbGVtZW50IHdpdGggSUQgXCJvcHRpb25zQnRuXCIgbm90IGZvdW5kLicpO1xuICAgIH1cbn0pO1xuIl0sIm5hbWVzIjpbImRvY3VtZW50IiwiYWRkRXZlbnRMaXN0ZW5lciIsIm9wdGlvbnNCdG4iLCJnZXRFbGVtZW50QnlJZCIsImNocm9tZSIsInJ1bnRpbWUiLCJvcGVuT3B0aW9uc1BhZ2UiLCJsYXN0RXJyb3IiLCJjb25zb2xlIiwiZXJyb3IiXSwic291cmNlUm9vdCI6IiJ9
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/*!**********************!*\
+  !*** ./src/popup.ts ***!
+  \**********************/
+
+document.addEventListener('DOMContentLoaded', () => {
+    const optionsBtn = document.getElementById('optionsBtn');
+    if (optionsBtn) {
+        optionsBtn.addEventListener('click', () => {
+            chrome.runtime.openOptionsPage(() => {
+                if (chrome.runtime.lastError) {
+                    console.error(chrome.runtime.lastError);
+                }
+            });
+        });
+    }
+    else {
+        console.error('Element with ID "optionsBtn" not found.');
+    }
+});
+
+/******/ })()
+;
+//# sourceMappingURL=popup.js.map

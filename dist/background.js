@@ -1,2 +1,63 @@
-(()=>{"use strict";const e={"hyperchill-sync":{websites:[],categories:[]},"all-time":{websites:[],categories:[]},"custom-time":{websites:[],categories:[]}},t={"hyperchill-sync":{"deep-work-toggle":!1},"custom-time":{"time-spans":[]}};chrome.runtime.onInstalled.addListener((()=>{chrome.storage.local.get("blocked",(t=>{t.blocked?console.log("Blocked object exists:",t.blocked):chrome.storage.local.set({blocked:e},(()=>{console.log("Blocked data initialized:",e)}))})),chrome.storage.local.get("settings",(e=>{e.settings?console.log("Settings object exists:",e.settings):chrome.storage.local.set({settings:t},(()=>{console.log("Settings initialized:",t)}))}))}))})();
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYmFja2dyb3VuZC5qcyIsIm1hcHBpbmdzIjoibUJBRUEsTUFBTUEsRUFBVSxDQUNaLGtCQUFtQixDQUNmQyxTQUFVLEdBQ1ZDLFdBQVksSUFFaEIsV0FBWSxDQUNSRCxTQUFVLEdBQ1ZDLFdBQVksSUFFaEIsY0FBZSxDQUNYRCxTQUFVLEdBQ1ZDLFdBQVksS0FHZEMsRUFBVyxDQUNiLGtCQUFtQixDQUNmLG9CQUFvQixHQUV4QixjQUFlLENBQ1gsYUFBYyxLQUl0QkMsT0FBT0MsUUFBUUMsWUFBWUMsYUFBWSxLQUNuQ0gsT0FBT0ksUUFBUUMsTUFBTUMsSUFBSSxXQUFZQyxJQUM1QkEsRUFBT1gsUUFPUlksUUFBUUMsSUFBSSx5QkFBMEJGLEVBQU9YLFNBTDdDSSxPQUFPSSxRQUFRQyxNQUFNSyxJQUFJLENBQUVkLFFBQVNBLElBQVcsS0FDM0NZLFFBQVFDLElBQUksNEJBQTZCYixFQUFRLEdBS3pELElBRUpJLE9BQU9JLFFBQVFDLE1BQU1DLElBQUksWUFBYUMsSUFDN0JBLEVBQU9SLFNBT1JTLFFBQVFDLElBQUksMEJBQTJCRixFQUFPUixVQUw5Q0MsT0FBT0ksUUFBUUMsTUFBTUssSUFBSSxDQUFFWCxTQUFVQSxJQUFZLEtBQzdDUyxRQUFRQyxJQUFJLHdCQUF5QlYsRUFBUyxHQUt0RCxHQUNGLEciLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9oeXBlcmNoaWxsLXdlYnNpdGUtYmxvY2tlci8uL3NyYy9iYWNrZ3JvdW5kLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIlwidXNlIHN0cmljdFwiO1xuLy8gRGVmaW5lIHJlY29yZHMgd2l0aCBleHBsaWNpdCBrZXlzXG5jb25zdCBibG9ja2VkID0ge1xuICAgICdoeXBlcmNoaWxsLXN5bmMnOiB7XG4gICAgICAgIHdlYnNpdGVzOiBbXSxcbiAgICAgICAgY2F0ZWdvcmllczogW11cbiAgICB9LFxuICAgICdhbGwtdGltZSc6IHtcbiAgICAgICAgd2Vic2l0ZXM6IFtdLFxuICAgICAgICBjYXRlZ29yaWVzOiBbXVxuICAgIH0sXG4gICAgJ2N1c3RvbS10aW1lJzoge1xuICAgICAgICB3ZWJzaXRlczogW10sXG4gICAgICAgIGNhdGVnb3JpZXM6IFtdXG4gICAgfVxufTtcbmNvbnN0IHNldHRpbmdzID0ge1xuICAgICdoeXBlcmNoaWxsLXN5bmMnOiB7XG4gICAgICAgICdkZWVwLXdvcmstdG9nZ2xlJzogZmFsc2VcbiAgICB9LFxuICAgICdjdXN0b20tdGltZSc6IHtcbiAgICAgICAgJ3RpbWUtc3BhbnMnOiBbXVxuICAgIH1cbn07XG4vLyBSdW4gb24gZXh0ZW5zaW9uIGluc3RhbGwgb3IgdXBkYXRlXG5jaHJvbWUucnVudGltZS5vbkluc3RhbGxlZC5hZGRMaXN0ZW5lcigoKSA9PiB7XG4gICAgY2hyb21lLnN0b3JhZ2UubG9jYWwuZ2V0KFwiYmxvY2tlZFwiLCAocmVzdWx0KSA9PiB7XG4gICAgICAgIGlmICghcmVzdWx0LmJsb2NrZWQpIHtcbiAgICAgICAgICAgIC8vIFNldHRpbmdzIG9iamVjdCBkb2VzIG5vdCBleGlzdCwgaW5pdGlhbGl6ZSB3aXRoIGRlZmF1bHRzXG4gICAgICAgICAgICBjaHJvbWUuc3RvcmFnZS5sb2NhbC5zZXQoeyBibG9ja2VkOiBibG9ja2VkIH0sICgpID0+IHtcbiAgICAgICAgICAgICAgICBjb25zb2xlLmxvZyhcIkJsb2NrZWQgZGF0YSBpbml0aWFsaXplZDpcIiwgYmxvY2tlZCk7XG4gICAgICAgICAgICB9KTtcbiAgICAgICAgfVxuICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgIGNvbnNvbGUubG9nKFwiQmxvY2tlZCBvYmplY3QgZXhpc3RzOlwiLCByZXN1bHQuYmxvY2tlZCk7XG4gICAgICAgIH1cbiAgICB9KTtcbiAgICBjaHJvbWUuc3RvcmFnZS5sb2NhbC5nZXQoXCJzZXR0aW5nc1wiLCAocmVzdWx0KSA9PiB7XG4gICAgICAgIGlmICghcmVzdWx0LnNldHRpbmdzKSB7XG4gICAgICAgICAgICAvLyBTZXR0aW5ncyBvYmplY3QgZG9lcyBub3QgZXhpc3QsIGluaXRpYWxpemUgd2l0aCBkZWZhdWx0c1xuICAgICAgICAgICAgY2hyb21lLnN0b3JhZ2UubG9jYWwuc2V0KHsgc2V0dGluZ3M6IHNldHRpbmdzIH0sICgpID0+IHtcbiAgICAgICAgICAgICAgICBjb25zb2xlLmxvZyhcIlNldHRpbmdzIGluaXRpYWxpemVkOlwiLCBzZXR0aW5ncyk7XG4gICAgICAgICAgICB9KTtcbiAgICAgICAgfVxuICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgIGNvbnNvbGUubG9nKFwiU2V0dGluZ3Mgb2JqZWN0IGV4aXN0czpcIiwgcmVzdWx0LnNldHRpbmdzKTtcbiAgICAgICAgfVxuICAgIH0pO1xufSk7XG4iXSwibmFtZXMiOlsiYmxvY2tlZCIsIndlYnNpdGVzIiwiY2F0ZWdvcmllcyIsInNldHRpbmdzIiwiY2hyb21lIiwicnVudGltZSIsIm9uSW5zdGFsbGVkIiwiYWRkTGlzdGVuZXIiLCJzdG9yYWdlIiwibG9jYWwiLCJnZXQiLCJyZXN1bHQiLCJjb25zb2xlIiwibG9nIiwic2V0Il0sInNvdXJjZVJvb3QiOiIifQ==
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/*!***************************!*\
+  !*** ./src/background.ts ***!
+  \***************************/
+
+// TypeScript declaration defines a const blocked, ensuring it adheres to a specific type structure
+// Record<K, T>
+// K: keys of the object
+// T: Type of the values corresponding to each key
+// Record structure works here since each key in blocked object is of type Blocked
+// If keys had various object types, type or interface would need to be used for specific key-type mappings
+const blocked = {
+    'hyperchill-sync': {
+        websites: [],
+        categories: []
+    },
+    'all-time': {
+        websites: [],
+        categories: []
+    },
+    'custom-time': {
+        websites: [],
+        categories: []
+    }
+};
+const settings = {
+    'hyperchill-sync': {
+        deepWorkToggle: false
+    },
+    'custom-time': {
+        timeSpans: []
+    }
+};
+// Run on extension install or update
+chrome.runtime.onInstalled.addListener(() => {
+    chrome.storage.local.get("blocked", (result) => {
+        if (!result.blocked) {
+            // Settings object does not exist, initialize with defaults
+            chrome.storage.local.set({ blocked: blocked }, () => {
+                console.log("Blocked data initialized:", blocked);
+            });
+        }
+        else {
+            console.log("Blocked object exists:", result.blocked);
+        }
+    });
+    chrome.storage.local.get("settings", (result) => {
+        if (!result.settings) {
+            // Settings object does not exist, initialize with defaults
+            chrome.storage.local.set({ settings: settings }, () => {
+                console.log("Settings initialized:", settings);
+            });
+        }
+        else {
+            console.log("Settings object exists:", result.settings);
+        }
+    });
+});
+
+/******/ })()
+;
+//# sourceMappingURL=background.js.map

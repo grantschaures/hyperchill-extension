@@ -38,3 +38,45 @@ html {
     background-color: rgb(107, 114, 128);
     border-radius: 10px;
 }
+
+/* Toggle Design (from HC) */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+.toggle-label {
+    display: block;
+    width: 66px;
+    height: 26px;
+    background-color: #e0e0e0;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 3px solid rgba(0, 0, 0, 0.25);
+}
+
+.toggle-ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+
+#deepWorkToggle:checked + #deepWorkToggleLabel {
+    background-color: #53e658;
+}
+
+#deepWorkToggle:checked + #deepWorkToggleLabel #deepWorkToggleBall {
+    left: 40px;
+}

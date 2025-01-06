@@ -1,2 +1,740 @@
-(()=>{"use strict";document.addEventListener("DOMContentLoaded",(()=>{const e=document.getElementById("hyperchill-sync-module"),t=document.getElementById("all-time-module"),n=document.getElementById("custom-time-module"),o=document.getElementById("home-contents"),l=document.getElementById("hyperchill-sync-contents"),c=document.getElementById("all-time-contents"),i=document.getElementById("custom-time-contents"),d=document.querySelectorAll(".back-btn"),s=document.getElementById("hyperchill-sync-websites-module"),a=document.getElementById("hyperchill-sync-categories-module"),m=document.getElementById("all-time-websites-module"),r=document.getElementById("all-time-categories-module"),u=document.getElementById("custom-time-websites-module"),g=document.getElementById("custom-time-categories-module"),y={blockedPageType:document.getElementById("blocked-page-type"),websiteCategory:document.getElementById("website-category"),websiteInputContainer:document.getElementById("website-input-container"),categoryInputContainer:document.getElementById("category-input-container")},b=[[s,l],[a,l],[m,c],[r,c],[u,i],[g,i]],I=document.getElementById("blocked-page"),p=[o,l,c,i],k={contentsId:null,blockedModuleId:null};function E(e){e.websiteInputContainer.classList.replace("flex","hidden"),e.categoryInputContainer.classList.replace("hidden","flex")}function C(e){e.categoryInputContainer.classList.replace("flex","hidden"),e.websiteInputContainer.classList.replace("hidden","flex")}function T(e,t){e.classList.replace("flex","hidden"),t.classList.replace("hidden","flex")}function B(e,t,n){t.forEach((t=>{t===e?t.classList.replace("hidden","flex"):t.classList.replace("flex","hidden")})),n.contentsId=e.id}e.addEventListener("click",(()=>{B(l,p,k)})),t.addEventListener("click",(()=>{B(c,p,k)})),n.addEventListener("click",(()=>{B(i,p,k)})),b.forEach((([e,t])=>{e.addEventListener("click",(()=>{k.blockedModuleId=e.id,T(t,I),function(e,t){k.blockedModuleId===e[0][0].id?(console.log("Hyperchill.io Sync Websites"),function(e){e.blockedPageType.innerText="Blocked Websites | Hyperchill.io Sync",e.websiteCategory.innerText="Website",C(e)}(t)):k.blockedModuleId===e[1][0].id?(console.log("Hyperchill.io Sync Categories"),function(e){e.blockedPageType.innerText="Blocked Categories | Hyperchill.io Sync",e.websiteCategory.innerText="Category",E(e)}(t)):k.blockedModuleId===e[2][0].id?(console.log("All Time Websites"),function(e){e.blockedPageType.innerText="Blocked Websites | All Time",e.websiteCategory.innerText="Website",C(e)}(t)):k.blockedModuleId===e[3][0].id?(console.log("All Time Categories"),function(e){e.blockedPageType.innerText="Blocked Categories | All Time",e.websiteCategory.innerText="Category",E(e)}(t)):k.blockedModuleId===e[4][0].id?(console.log("Custom Time Websites"),function(e){e.blockedPageType.innerText="Blocked Websites | Custom Time",e.websiteCategory.innerText="Website",C(e)}(t)):k.blockedModuleId===e[5][0].id&&(console.log("Custom Time Categories"),function(e){e.blockedPageType.innerText="Blocked Categories | Custom Time",e.websiteCategory.innerText="Category",E(e)}(t))}(b,y)}))})),d.forEach((e=>{e.addEventListener("click",(()=>{if("blocked-page-back-btn"==e.id){if(k.contentsId){let e=document.getElementById(k.contentsId);e&&T(I,e)}}else B(o,p,k)}))}))}))})();
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,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LFNBQVNHLGVBQWV1QixFQUFZQyxZQUN2RDBCLEdBQ0FwQixFQUFnQlQsRUFBYTZCLEVBRXJDLE9BR0FqQixFQUFnQjlCLEVBQWNtQixFQUFVQyxFQUM1QyxHQUNGLEdBc0ZOLEciLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9oeXBlcmNoaWxsLXdlYnNpdGUtYmxvY2tlci8uL3NyYy9vcHRpb25zLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIlwidXNlIHN0cmljdFwiO1xuZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsICgpID0+IHtcbiAgICBjb25zdCBoeXBlcmNoaWxsU3luY01vZHVsZSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdoeXBlcmNoaWxsLXN5bmMtbW9kdWxlJyk7XG4gICAgY29uc3QgYWxsVGltZU1vZHVsZSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdhbGwtdGltZS1tb2R1bGUnKTtcbiAgICBjb25zdCBjdXN0b21UaW1lTW9kdWxlID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2N1c3RvbS10aW1lLW1vZHVsZScpO1xuICAgIGNvbnN0IGhvbWVDb250ZW50cyA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdob21lLWNvbnRlbnRzJyk7XG4gICAgY29uc3QgaHlwZXJjaGlsbFN5bmNDb250ZW50cyA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdoeXBlcmNoaWxsLXN5bmMtY29udGVudHMnKTtcbiAgICBjb25zdCBhbGxUaW1lQ29udGVudHMgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnYWxsLXRpbWUtY29udGVudHMnKTtcbiAgICBjb25zdCBjdXN0b21UaW1lQ29udGVudHMgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY3VzdG9tLXRpbWUtY29udGVudHMnKTtcbiAgICBjb25zdCBiYWNrQnRucyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJy5iYWNrLWJ0bicpO1xuICAgIC8vIEh5cGVyY2hpbGwuaW8gU3luY1xuICAgIGNvbnN0IGh5cGVyY2hpbGxTeW5jV2Vic2l0ZXNNb2R1bGUgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaHlwZXJjaGlsbC1zeW5jLXdlYnNpdGVzLW1vZHVsZScpO1xuICAgIGNvbnN0IGh5cGVyY2hpbGxTeW5jQ2F0ZWdvcmllc01vZHVsZSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdoeXBlcmNoaWxsLXN5bmMtY2F0ZWdvcmllcy1tb2R1bGUnKTtcbiAgICAvLyBBbGwgVGltZSBDb250ZW50c1xuICAgIGNvbnN0IGFsbFRpbWVXZWJzaXRlc01vZHVsZSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdhbGwtdGltZS13ZWJzaXRlcy1tb2R1bGUnKTtcbiAgICBjb25zdCBhbGxUaW1lQ2F0ZWdvcmllc01vZHVsZSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdhbGwtdGltZS1jYXRlZ29yaWVzLW1vZHVsZScpO1xuICAgIC8vIEN1c3RvbSBUaW1lIENvbnRlbnRzXG4gICAgY29uc3QgY3VzdG9tVGltZVdlYnNpdGVzTW9kdWxlID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2N1c3RvbS10aW1lLXdlYnNpdGVzLW1vZHVsZScpO1xuICAgIGNvbnN0IGN1c3RvbVRpbWVDYXRlZ29yaWVzTW9kdWxlID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2N1c3RvbS10aW1lLWNhdGVnb3JpZXMtbW9kdWxlJyk7XG4gICAgLy8gQmxvY2tlZCBwYWdlXG4gICAgY29uc3QgYmxvY2tlZFBhZ2VUeXBlID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2Jsb2NrZWQtcGFnZS10eXBlJyk7XG4gICAgY29uc3Qgd2Vic2l0ZUNhdGVnb3J5ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3dlYnNpdGUtY2F0ZWdvcnknKTtcbiAgICBjb25zdCB3ZWJzaXRlSW5wdXRDb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnd2Vic2l0ZS1pbnB1dC1jb250YWluZXInKTtcbiAgICBjb25zdCBjYXRlZ29yeUlucHV0Q29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NhdGVnb3J5LWlucHV0LWNvbnRhaW5lcicpO1xuICAgIGNvbnN0IGJsb2NrZWRQYWdlRWxlbWVudHMgPSB7XG4gICAgICAgIGJsb2NrZWRQYWdlVHlwZSxcbiAgICAgICAgd2Vic2l0ZUNhdGVnb3J5LFxuICAgICAgICB3ZWJzaXRlSW5wdXRDb250YWluZXIsXG4gICAgICAgIGNhdGVnb3J5SW5wdXRDb250YWluZXJcbiAgICB9O1xuICAgIGNvbnN0IG1vZHVsZXMgPSBbXG4gICAgICAgIFtoeXBlcmNoaWxsU3luY1dlYnNpdGVzTW9kdWxlLCBoeXBlcmNoaWxsU3luY0NvbnRlbnRzXSxcbiAgICAgICAgW2h5cGVyY2hpbGxTeW5jQ2F0ZWdvcmllc01vZHVsZSwgaHlwZXJjaGlsbFN5bmNDb250ZW50c10sXG4gICAgICAgIFthbGxUaW1lV2Vic2l0ZXNNb2R1bGUsIGFsbFRpbWVDb250ZW50c10sXG4gICAgICAgIFthbGxUaW1lQ2F0ZWdvcmllc01vZHVsZSwgYWxsVGltZUNvbnRlbnRzXSxcbiAgICAgICAgW2N1c3RvbVRpbWVXZWJzaXRlc01vZHVsZSwgY3VzdG9tVGltZUNvbnRlbnRzXSxcbiAgICAgICAgW2N1c3RvbVRpbWVDYXRlZ29yaWVzTW9kdWxlLCBjdXN0b21UaW1lQ29udGVudHNdXG4gICAgXTtcbiAgICAvLyBCbG9ja2VkIFBhZ2VcbiAgICBjb25zdCBibG9ja2VkUGFnZSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdibG9ja2VkLXBhZ2UnKTtcbiAgICBjb25zdCBjb250ZW50cyA9IFtcbiAgICAgICAgaG9tZUNvbnRlbnRzLFxuICAgICAgICBoeXBlcmNoaWxsU3luY0NvbnRlbnRzLFxuICAgICAgICBhbGxUaW1lQ29udGVudHMsXG4gICAgICAgIGN1c3RvbVRpbWVDb250ZW50c1xuICAgIF07XG4gICAgY29uc3QgdGVtcFN0b3JhZ2UgPSB7XG4gICAgICAgIGNvbnRlbnRzSWQ6IG51bGwsXG4gICAgICAgIGJsb2NrZWRNb2R1bGVJZDogbnVsbFxuICAgIH07XG4gICAgaHlwZXJjaGlsbFN5bmNNb2R1bGUuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCAoKSA9PiB7XG4gICAgICAgIGRpc3BsYXlDb250ZW50cyhoeXBlcmNoaWxsU3luY0NvbnRlbnRzLCBjb250ZW50cywgdGVtcFN0b3JhZ2UpO1xuICAgIH0pO1xuICAgIGFsbFRpbWVNb2R1bGUuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCAoKSA9PiB7XG4gICAgICAgIC8vIE9wZW4gTmV3IFBhZ2VcbiAgICAgICAgZGlzcGxheUNvbnRlbnRzKGFsbFRpbWVDb250ZW50cywgY29udGVudHMsIHRlbXBTdG9yYWdlKTtcbiAgICB9KTtcbiAgICBjdXN0b21UaW1lTW9kdWxlLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgKCkgPT4ge1xuICAgICAgICAvLyBPcGVuIE5ldyBQYWdlXG4gICAgICAgIGRpc3BsYXlDb250ZW50cyhjdXN0b21UaW1lQ29udGVudHMsIGNvbnRlbnRzLCB0ZW1wU3RvcmFnZSk7XG4gICAgfSk7XG4gICAgbW9kdWxlcy5mb3JFYWNoKChbbW9kdWxlLCBjb250ZW50c10pID0+IHtcbiAgICAgICAgbW9kdWxlLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgKCkgPT4ge1xuICAgICAgICAgICAgdGVtcFN0b3JhZ2UuYmxvY2tlZE1vZHVsZUlkID0gbW9kdWxlLmlkOyAvLyAxc3RcbiAgICAgICAgICAgIGhpZGVEaXNwbGF5UGFnZShjb250ZW50cywgYmxvY2tlZFBhZ2UpOyAvLyAybmRcbiAgICAgICAgICAgIC8vIER5bmFtaWMgYWRqdXN0bWVudHNcbiAgICAgICAgICAgIHBvcHVsYXRlQmxvY2tlZFBhZ2UobW9kdWxlcywgYmxvY2tlZFBhZ2VFbGVtZW50cyk7XG4gICAgICAgIH0pO1xuICAgIH0pO1xuICAgIGJhY2tCdG5zLmZvckVhY2goKGJhY2tCdG4pID0+IHtcbiAgICAgICAgYmFja0J0bi5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsICgpID0+IHtcbiAgICAgICAgICAgIGlmIChiYWNrQnRuLmlkID09ICdibG9ja2VkLXBhZ2UtYmFjay1idG4nKSB7XG4gICAgICAgICAgICAgICAgLy8gUmV0dXJuIHRvIHRoZSBwcmV2aW91c2x5IHNlbGVjdGVkIG9wdGlvbiAoSEMgU3luYywgQWxsIFRpbWUsIG9yIEN1c3RvbSBUaW1lKVxuICAgICAgICAgICAgICAgIGlmICh0ZW1wU3RvcmFnZS5jb250ZW50c0lkKSB7XG4gICAgICAgICAgICAgICAgICAgIGxldCBwcmV2Q29udGVudHNQYWdlID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQodGVtcFN0b3JhZ2UuY29udGVudHNJZCk7XG4gICAgICAgICAgICAgICAgICAgIGlmIChwcmV2Q29udGVudHNQYWdlKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBoaWRlRGlzcGxheVBhZ2UoYmxvY2tlZFBhZ2UsIHByZXZDb250ZW50c1BhZ2UpO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuICAgICAgICAgICAgZWxzZSB7XG4gICAgICAgICAgICAgICAgZGlzcGxheUNvbnRlbnRzKGhvbWVDb250ZW50cywgY29udGVudHMsIHRlbXBTdG9yYWdlKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfSk7XG4gICAgfSk7XG4gICAgLy8gLy8gLy8gLy8gLy8gLy8gLy9cbiAgICAvLyBIZWxwZXIgRnVuY3Rpb25zXG4gICAgLy8gLy8gLy8gLy8gLy8gLy8gLy9cbiAgICBmdW5jdGlvbiBwb3B1bGF0ZUJsb2NrZWRQYWdlKG1vZHVsZXMsIGJsb2NrZWRQYWdlRWxlbWVudHMpIHtcbiAgICAgICAgLy8gSHlwZXJjaGlsbC5pbyBTeW5jIFdlYnNpdGVzXG4gICAgICAgIGlmICh0ZW1wU3RvcmFnZS5ibG9ja2VkTW9kdWxlSWQgPT09IG1vZHVsZXNbMF1bMF0uaWQpIHtcbiAgICAgICAgICAgIGNvbnNvbGUubG9nKCdIeXBlcmNoaWxsLmlvIFN5bmMgV2Vic2l0ZXMnKTtcbiAgICAgICAgICAgIHBvcHVsYXRlSHlwZXJjaGlsbFN5bmNXZWJzaXRlcyhibG9ja2VkUGFnZUVsZW1lbnRzKTtcbiAgICAgICAgfVxuICAgICAgICBlbHNlIGlmICh0ZW1wU3RvcmFnZS5ibG9ja2VkTW9kdWxlSWQgPT09IG1vZHVsZXNbMV1bMF0uaWQpIHtcbiAgICAgICAgICAgIGNvbnNvbGUubG9nKCdIeXBlcmNoaWxsLmlvIFN5bmMgQ2F0ZWdvcmllcycpO1xuICAgICAgICAgICAgcG9wdWxhdGVIeXBlcmNoaWxsU3luY0NhdGVnb3JpZXMoYmxvY2tlZFBhZ2VFbGVtZW50cyk7XG4gICAgICAgIH1cbiAgICAgICAgZWxzZSBpZiAodGVtcFN0b3JhZ2UuYmxvY2tlZE1vZHVsZUlkID09PSBtb2R1bGVzWzJdWzBdLmlkKSB7XG4gICAgICAgICAgICBjb25zb2xlLmxvZygnQWxsIFRpbWUgV2Vic2l0ZXMnKTtcbiAgICAgICAgICAgIHBvcHVsYXRlQWxsVGltZVdlYnNpdGVzKGJsb2NrZWRQYWdlRWxlbWVudHMpO1xuICAgICAgICB9XG4gICAgICAgIGVsc2UgaWYgKHRlbXBTdG9yYWdlLmJsb2NrZWRNb2R1bGVJZCA9PT0gbW9kdWxlc1szXVswXS5pZCkge1xuICAgICAgICAgICAgY29uc29sZS5sb2coJ0FsbCBUaW1lIENhdGVnb3JpZXMnKTtcbiAgICAgICAgICAgIHBvcHVsYXRlQWxsVGltZUNhdGVnb3JpZXMoYmxvY2tlZFBhZ2VFbGVtZW50cyk7XG4gICAgICAgIH1cbiAgICAgICAgZWxzZSBpZiAodGVtcFN0b3JhZ2UuYmxvY2tlZE1vZHVsZUlkID09PSBtb2R1bGVzWzRdWzBdLmlkKSB7XG4gICAgICAgICAgICBjb25zb2xlLmxvZygnQ3VzdG9tIFRpbWUgV2Vic2l0ZXMnKTtcbiAgICAgICAgICAgIHBvcHVsYXRlQ3VzdG9tVGltZVdlYnNpdGVzKGJsb2NrZWRQYWdlRWxlbWVudHMpO1xuICAgICAgICB9XG4gICAgICAgIGVsc2UgaWYgKHRlbXBTdG9yYWdlLmJsb2NrZWRNb2R1bGVJZCA9PT0gbW9kdWxlc1s1XVswXS5pZCkge1xuICAgICAgICAgICAgY29uc29sZS5sb2coJ0N1c3RvbSBUaW1lIENhdGVnb3JpZXMnKTtcbiAgICAgICAgICAgIHBvcHVsYXRlQ3VzdG9tVGltZUNhdGVnb3JpZXMoYmxvY2tlZFBhZ2VFbGVtZW50cyk7XG4gICAgICAgIH1cbiAgICB9XG4gICAgZnVuY3Rpb24gcG9wdWxhdGVIeXBlcmNoaWxsU3luY1dlYnNpdGVzKGJsb2NrZWRQYWdlRWxlbWVudHMpIHtcbiAgICAgICAgYmxvY2tlZFBhZ2VFbGVtZW50cy5ibG9ja2VkUGFnZVR5cGUuaW5uZXJUZXh0ID0gXCJCbG9ja2VkIFdlYnNpdGVzIHwgSHlwZXJjaGlsbC5pbyBTeW5jXCI7XG4gICAgICAgIGJsb2NrZWRQYWdlRWxlbWVudHMud2Vic2l0ZUNhdGVnb3J5LmlubmVyVGV4dCA9IFwiV2Vic2l0ZVwiO1xuICAgICAgICBzaG93V2Vic2l0ZUlucHV0KGJsb2NrZWRQYWdlRWxlbWVudHMpO1xuICAgIH1cbiAgICBmdW5jdGlvbiBwb3B1bGF0ZUh5cGVyY2hpbGxTeW5jQ2F0ZWdvcmllcyhibG9ja2VkUGFnZUVsZW1lbnRzKSB7XG4gICAgICAgIGJsb2NrZWRQYWdlRWxlbWVudHMuYmxvY2tlZFBhZ2VUeXBlLmlubmVyVGV4dCA9IFwiQmxvY2tlZCBDYXRlZ29yaWVzIHwgSHlwZXJjaGlsbC5pbyBTeW5jXCI7XG4gICAgICAgIGJsb2NrZWRQYWdlRWxlbWVudHMud2Vic2l0ZUNhdGVnb3J5LmlubmVyVGV4dCA9IFwiQ2F0ZWdvcnlcIjtcbiAgICAgICAgc2hvd0NhdGVnb3J5SW5wdXQoYmxvY2tlZFBhZ2VFbGVtZW50cyk7XG4gICAgfVxuICAgIGZ1bmN0aW9uIHBvcHVsYXRlQWxsVGltZVdlYnNpdGVzKGJsb2NrZWRQYWdlRWxlbWVudHMpIHtcbiAgICAgICAgYmxvY2tlZFBhZ2VFbGVtZW50cy5ibG9ja2VkUGFnZVR5cGUuaW5uZXJUZXh0ID0gXCJCbG9ja2VkIFdlYnNpdGVzIHwgQWxsIFRpbWVcIjtcbiAgICAgICAgYmxvY2tlZFBhZ2VFbGVtZW50cy53ZWJzaXRlQ2F0ZWdvcnkuaW5uZXJUZXh0ID0gXCJXZWJzaXRlXCI7XG4gICAgICAgIHNob3dXZWJzaXRlSW5wdXQoYmxvY2tlZFBhZ2VFbGVtZW50cyk7XG4gICAgfVxuICAgIGZ1bmN0aW9uIHBvcHVsYXRlQWxsVGltZUNhdGVnb3JpZXMoYmxvY2tlZFBhZ2VFbGVtZW50cykge1xuICAgICAgICBibG9ja2VkUGFnZUVsZW1lbnRzLmJsb2NrZWRQYWdlVHlwZS5pbm5lclRleHQgPSBcIkJsb2NrZWQgQ2F0ZWdvcmllcyB8IEFsbCBUaW1lXCI7XG4gICAgICAgIGJsb2NrZWRQYWdlRWxlbWVudHMud2Vic2l0ZUNhdGVnb3J5LmlubmVyVGV4dCA9IFwiQ2F0ZWdvcnlcIjtcbiAgICAgICAgc2hvd0NhdGVnb3J5SW5wdXQoYmxvY2tlZFBhZ2VFbGVtZW50cyk7XG4gICAgfVxuICAgIGZ1bmN0aW9uIHBvcHVsYXRlQ3VzdG9tVGltZVdlYnNpdGVzKGJsb2NrZWRQYWdlRWxlbWVudHMpIHtcbiAgICAgICAgYmxvY2tlZFBhZ2VFbGVtZW50cy5ibG9ja2VkUGFnZVR5cGUuaW5uZXJUZXh0ID0gXCJCbG9ja2VkIFdlYnNpdGVzIHwgQ3VzdG9tIFRpbWVcIjtcbiAgICAgICAgYmxvY2tlZFBhZ2VFbGVtZW50cy53ZWJzaXRlQ2F0ZWdvcnkuaW5uZXJUZXh0ID0gXCJXZWJzaXRlXCI7XG4gICAgICAgIHNob3dXZWJzaXRlSW5wdXQoYmxvY2tlZFBhZ2VFbGVtZW50cyk7XG4gICAgfVxuICAgIGZ1bmN0aW9uIHBvcHVsYXRlQ3VzdG9tVGltZUNhdGVnb3JpZXMoYmxvY2tlZFBhZ2VFbGVtZW50cykge1xuICAgICAgICBibG9ja2VkUGFnZUVsZW1lbnRzLmJsb2NrZWRQYWdlVHlwZS5pbm5lclRleHQgPSBcIkJsb2NrZWQgQ2F0ZWdvcmllcyB8IEN1c3RvbSBUaW1lXCI7XG4gICAgICAgIGJsb2NrZWRQYWdlRWxlbWVudHMud2Vic2l0ZUNhdGVnb3J5LmlubmVyVGV4dCA9IFwiQ2F0ZWdvcnlcIjtcbiAgICAgICAgc2hvd0NhdGVnb3J5SW5wdXQoYmxvY2tlZFBhZ2VFbGVtZW50cyk7XG4gICAgfVxuICAgIGZ1bmN0aW9uIHNob3dDYXRlZ29yeUlucHV0KGJsb2NrZWRQYWdlRWxlbWVudHMpIHtcbiAgICAgICAgYmxvY2tlZFBhZ2VFbGVtZW50cy53ZWJzaXRlSW5wdXRDb250YWluZXIuY2xhc3NMaXN0LnJlcGxhY2UoJ2ZsZXgnLCAnaGlkZGVuJyk7XG4gICAgICAgIGJsb2NrZWRQYWdlRWxlbWVudHMuY2F0ZWdvcnlJbnB1dENvbnRhaW5lci5jbGFzc0xpc3QucmVwbGFjZSgnaGlkZGVuJywgJ2ZsZXgnKTtcbiAgICB9XG4gICAgZnVuY3Rpb24gc2hvd1dlYnNpdGVJbnB1dChibG9ja2VkUGFnZUVsZW1lbnRzKSB7XG4gICAgICAgIGJsb2NrZWRQYWdlRWxlbWVudHMuY2F0ZWdvcnlJbnB1dENvbnRhaW5lci5jbGFzc0xpc3QucmVwbGFjZSgnZmxleCcsICdoaWRkZW4nKTtcbiAgICAgICAgYmxvY2tlZFBhZ2VFbGVtZW50cy53ZWJzaXRlSW5wdXRDb250YWluZXIuY2xhc3NMaXN0LnJlcGxhY2UoJ2hpZGRlbicsICdmbGV4Jyk7XG4gICAgfVxuICAgIC8vIERlYWxzIHdpdGggb3BlbmluZy8gY2xvc2luZyBIeXBlcmNoaWxsLmlvIFN5bmMsIEFsbCBUaW1lLCBhbmQgQ3VzdG9tIFRpbWUgcGFnZXMgYW5kIHRoZSBmaW5hbCBCbG9ja2VkIFBhZ2VcbiAgICBmdW5jdGlvbiBoaWRlRGlzcGxheVBhZ2UoaGlkZVBhZ2UsIGRpc3BsYXlQYWdlKSB7XG4gICAgICAgIGhpZGVQYWdlLmNsYXNzTGlzdC5yZXBsYWNlKCdmbGV4JywgJ2hpZGRlbicpO1xuICAgICAgICBkaXNwbGF5UGFnZS5jbGFzc0xpc3QucmVwbGFjZSgnaGlkZGVuJywgJ2ZsZXgnKTtcbiAgICB9XG4gICAgLy8gRGVhbHMgd2l0aCBzaG93aW5nLyBoaWRpbmcgcGFnZXMgd2hlbiBpbml0aWFsIG1vZHVsZXMgYXJlIHNlbGVjdGVkIChlLmcuIEh5cGVyY2hpbGwuaW8gU3luYywgQWxsIFRpbWUsIGFuZCBDdXN0b20gVGltZSlcbiAgICBmdW5jdGlvbiBkaXNwbGF5Q29udGVudHMoZWxlbWVudCwgY29udGVudHMsIHRlbXBTdG9yYWdlKSB7XG4gICAgICAgIGNvbnRlbnRzLmZvckVhY2goY29udGVudCA9PiB7XG4gICAgICAgICAgICBpZiAoY29udGVudCA9PT0gZWxlbWVudCkge1xuICAgICAgICAgICAgICAgIGNvbnRlbnQuY2xhc3NMaXN0LnJlcGxhY2UoJ2hpZGRlbicsICdmbGV4Jyk7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgICBjb250ZW50LmNsYXNzTGlzdC5yZXBsYWNlKCdmbGV4JywgJ2hpZGRlbicpO1xuICAgICAgICAgICAgfVxuICAgICAgICB9KTtcbiAgICAgICAgdGVtcFN0b3JhZ2UuY29udGVudHNJZCA9IGVsZW1lbnQuaWQ7XG4gICAgfVxufSk7XG4iXSwibmFtZXMiOlsiZG9jdW1lbnQiLCJhZGRFdmVudExpc3RlbmVyIiwiaHlwZXJjaGlsbFN5bmNNb2R1bGUiLCJnZXRFbGVtZW50QnlJZCIsImFsbFRpbWVNb2R1bGUiLCJjdXN0b21UaW1lTW9kdWxlIiwiaG9tZUNvbnRlbnRzIiwiaHlwZXJjaGlsbFN5bmNDb250ZW50cyIsImFsbFRpbWVDb250ZW50cyIsImN1c3RvbVRpbWVDb250ZW50cyIsImJhY2tCdG5zIiwicXVlcnlTZWxlY3RvckFsbCIsImh5cGVyY2hpbGxTeW5jV2Vic2l0ZXNNb2R1bGUiLCJoeXBlcmNoaWxsU3luY0NhdGVnb3JpZXNNb2R1bGUiLCJhbGxUaW1lV2Vic2l0ZXNNb2R1bGUiLCJhbGxUaW1lQ2F0ZWdvcmllc01vZHVsZSIsImN1c3RvbVRpbWVXZWJzaXRlc01vZHVsZSIsImN1c3RvbVRpbWVDYXRlZ29yaWVzTW9kdWxlIiwiYmxvY2tlZFBhZ2VFbGVtZW50cyIsImJsb2NrZWRQYWdlVHlwZSIsIndlYnNpdGVDYXRlZ29yeSIsIndlYnNpdGVJbnB1dENvbnRhaW5lciIsImNhdGVnb3J5SW5wdXRDb250YWluZXIiLCJtb2R1bGVzIiwiYmxvY2tlZFBhZ2UiLCJjb250ZW50cyIsInRlbXBTdG9yYWdlIiwiY29udGVudHNJZCIsImJsb2NrZWRNb2R1bGVJZCIsInNob3dDYXRlZ29yeUlucHV0IiwiY2xhc3NMaXN0IiwicmVwbGFjZSIsInNob3dXZWJzaXRlSW5wdXQiLCJoaWRlRGlzcGxheVBhZ2UiLCJoaWRlUGFnZSIsImRpc3BsYXlQYWdlIiwiZGlzcGxheUNvbnRlbnRzIiwiZWxlbWVudCIsImZvckVhY2giLCJjb250ZW50IiwiaWQiLCJtb2R1bGUiLCJjb25zb2xlIiwibG9nIiwiaW5uZXJUZXh0IiwicG9wdWxhdGVIeXBlcmNoaWxsU3luY1dlYnNpdGVzIiwicG9wdWxhdGVIeXBlcmNoaWxsU3luY0NhdGVnb3JpZXMiLCJwb3B1bGF0ZUFsbFRpbWVXZWJzaXRlcyIsInBvcHVsYXRlQWxsVGltZUNhdGVnb3JpZXMiLCJwb3B1bGF0ZUN1c3RvbVRpbWVXZWJzaXRlcyIsInBvcHVsYXRlQ3VzdG9tVGltZUNhdGVnb3JpZXMiLCJwb3B1bGF0ZUJsb2NrZWRQYWdlIiwiYmFja0J0biIsInByZXZDb250ZW50c1BhZ2UiXSwic291cmNlUm9vdCI6IiJ9
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/content.ts":
+/*!************************!*\
+  !*** ./src/content.ts ***!
+  \************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+// The point of this script will be to dynamically load users' data from chrome.storage.local into the blocked page (#blocked-page)
+// It will also deal with User Interaction (adding/ removing websites and categories)
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.updateBlockedPage = updateBlockedPage;
+// (1) Retrieve data from chrome.storage.local and initialize blocked and settings objects
+// (2) define populateBlockedPage() with args tempStorage {contentsId and blockedModuleId}
+//     This will populate blocked page
+// (3) Define callback functions for blocking a website/ category and removing from list
+const types_1 = __webpack_require__(/*! ./types */ "./src/types.ts");
+// ✅ Declare storageDict in the global scope
+let storageDict = {};
+// Variables
+const blockedGrid = document.getElementById('blocked-grid');
+const websiteInput = document.getElementById('website-input');
+const blockWebsiteBtn = document.getElementById('block-website-btn');
+const categoryInput = document.getElementById('category-input');
+const blockCategoryBtn = document.getElementById('block-category-btn');
+// Input-related blocked page elements
+const invalidWebsiteContainer = document.getElementById('invalid-website-container');
+const invalidWebsiteMessage = document.getElementById('invalid-website-message');
+const invalidCategoryContainer = document.getElementById('invalid-category-container');
+const invalidCategoryMessage = document.getElementById('invalid-category-message');
+// Custom time page
+const addTimespanBtn = document.getElementById('add-timespan-btn');
+const initialHour = document.getElementById('initial-hour');
+const initialMinute = document.getElementById('initial-minute');
+const initialAMPM = document.getElementById('initial-ampm');
+const finalHour = document.getElementById('final-hour');
+const finalMinute = document.getElementById('final-minute');
+const finalAMPM = document.getElementById('final-ampm');
+// Hyperchill.io Sync Page
+const deepWorkToggle = document.getElementById('deepWorkToggle');
+const blockedCountElements = {
+    hyperchillSyncWebsitesBlocked: document.getElementById('hyperchill-sync-websites-blocked'),
+    hyperchillSyncCategoriesBlocked: document.getElementById('hyperchill-sync-categories-blocked'),
+    allTimeWebsitesBlocked: document.getElementById('all-time-websites-blocked'),
+    allTimeCategoriesBlocked: document.getElementById('all-time-categories-blocked'),
+    customTimeWebsitesBlocked: document.getElementById('custom-time-websites-blocked'),
+    customTimeCategoriesBlocked: document.getElementById('custom-time-categories-blocked')
+};
+let blockedModuleId = null;
+const blockedData = {
+    blocked: {
+        'hyperchill-sync': {
+            websites: [],
+            categories: []
+        },
+        'all-time': {
+            websites: [],
+            categories: []
+        },
+        'custom-time': {
+            websites: [],
+            categories: []
+        }
+    },
+    settings: {
+        'hyperchill-sync': {
+            deepWorkToggle: false
+        },
+        'custom-time': {
+            timeSpans: []
+        }
+    }
+};
+const moduleIds = [
+    'hyperchill-sync-websites-module',
+    'hyperchill-sync-categories-module',
+    'all-time-websites-module',
+    'all-time-categories-module',
+    'custom-time-websites-module',
+    'custom-time-categories-module'
+];
+document.addEventListener('DOMContentLoaded', () => {
+    chrome.storage.local.get(['blocked', 'settings'], (result) => {
+        blockedData.blocked = result.blocked || {};
+        blockedData.settings = result.settings || {};
+        // values are references to blocked data
+        storageDict = {
+            'hyperchill-sync-websites-module': blockedData.blocked["hyperchill-sync"].websites,
+            'hyperchill-sync-categories-module': blockedData.blocked["hyperchill-sync"].categories,
+            'all-time-websites-module': blockedData.blocked["all-time"].websites,
+            'all-time-categories-module': blockedData.blocked["all-time"].categories,
+            'custom-time-websites-module': blockedData.blocked["custom-time"].websites,
+            'custom-time-categories-module': blockedData.blocked["custom-time"].categories,
+        };
+        updateDeepWorkToggleState(blockedData);
+        populateTimespansGrid(blockedData);
+        updateModuleBlockCount(blockedData, blockedCountElements);
+    });
+    // Document Event Listeners
+    document.addEventListener('click', (event) => {
+        var _a, _b, _c, _d, _e;
+        let target = event.target;
+        if (target.classList.contains('remove-btn')) {
+            const blockedValueDiv = (_b = (_a = target.parentElement) === null || _a === void 0 ? void 0 : _a.previousElementSibling) === null || _b === void 0 ? void 0 : _b.previousElementSibling;
+            const blockedValue = blockedValueDiv === null || blockedValueDiv === void 0 ? void 0 : blockedValueDiv.textContent;
+            if (blockedValue && blockedModuleId) {
+                const blockedArr = storageDict[blockedModuleId];
+                const index = blockedArr === null || blockedArr === void 0 ? void 0 : blockedArr.findIndex(item => item.value === blockedValue);
+                if (index !== undefined && index > -1) {
+                    blockedArr === null || blockedArr === void 0 ? void 0 : blockedArr.splice(index, 1);
+                    chrome.storage.local.set({ blocked: blockedData.blocked }, () => {
+                        console.log("Blocked List Updated:", blockedData.blocked);
+                        updateBlockedPage(types_1.tempStorage);
+                        updateModuleBlockCount(blockedData, blockedCountElements);
+                    });
+                }
+            }
+        }
+        else if (target.classList.contains('remove-timespan-btn')) {
+            const initialTimeSpan = (_d = (_c = target.parentElement) === null || _c === void 0 ? void 0 : _c.previousElementSibling) === null || _d === void 0 ? void 0 : _d.previousElementSibling;
+            const finalTimeSpan = (_e = target.parentElement) === null || _e === void 0 ? void 0 : _e.previousElementSibling;
+            const initialTime = initialTimeSpan === null || initialTimeSpan === void 0 ? void 0 : initialTimeSpan.textContent;
+            const finalTime = finalTimeSpan === null || finalTimeSpan === void 0 ? void 0 : finalTimeSpan.textContent;
+            if (initialTime && finalTime) {
+                const timespansArr = blockedData.settings["custom-time"].timeSpans;
+                const initialTimeInMs = convertTimeToMs(initialTime);
+                const finalTimeInMs = convertTimeToMs(finalTime);
+                const index = timespansArr === null || timespansArr === void 0 ? void 0 : timespansArr.findIndex(timespan => timespan[0] === initialTimeInMs && timespan[1] === finalTimeInMs);
+                if (index !== undefined && index > -1) {
+                    timespansArr === null || timespansArr === void 0 ? void 0 : timespansArr.splice(index, 1);
+                    chrome.storage.local.set({ settings: blockedData.settings }, () => {
+                        console.log("Settings Updated:", blockedData.settings);
+                        populateTimespansGrid(blockedData);
+                    });
+                }
+            }
+        }
+    });
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            if (document.activeElement === websiteInput) {
+                blockWebsiteBtn.click();
+            }
+            else if (document.activeElement === categoryInput) {
+                // functionality is a bit weird but at least there's the option
+                blockCategoryBtn.click();
+            }
+        }
+    });
+    blockWebsiteBtn.addEventListener('click', (event) => {
+        // depending on the current blockedModuleId, we will first check if input is correct format
+        // then we'll add the inputted website into the data object and run updateBlockedPage
+        let domain = websiteInput.value;
+        let [validationResult, errorType] = validateWebsiteInput(domain, types_1.tempStorage);
+        if (validationResult) {
+            console.log('valid domain');
+            // if invalid input message still showing on valid input, remove it asap
+            if (invalidWebsiteContainer.style.opacity === '1') {
+                invalidWebsiteContainer.style.opacity = '0';
+            }
+            // (1) add new entry to main blocked object
+            updateBlockedObject(types_1.tempStorage, domain);
+            // (1.1) set chrome.strage.local with this new data
+            chrome.storage.local.set({ blocked: blockedData.blocked }, () => {
+                console.log("Blocked List Updated:", blockedData.blocked);
+            });
+            // (2) clear input
+            websiteInput.value = '';
+            websiteInput.focus();
+            // (3) show entry at bottom of grid UI (rapidly clears and repopulates grid)
+            updateBlockedPage(types_1.tempStorage);
+            // (4) update module block count
+            updateModuleBlockCount(blockedData, blockedCountElements);
+        }
+        else {
+            console.log('invalid input');
+            let errorStr = "";
+            if (errorType === 'invalid-input') {
+                errorStr = "Invalid input. Please try again.";
+            }
+            else if (errorType === 'duplicate-website') {
+                errorStr = "Deplicate entry. Please try again.";
+            }
+            invalidWebsiteMessage.innerText = errorStr;
+            // show error message
+            invalidWebsiteContainer.style.opacity = '1';
+            setTimeout(() => {
+                invalidWebsiteContainer.style.opacity = '0';
+            }, 3000);
+            websiteInput.focus();
+        }
+    });
+    blockCategoryBtn.addEventListener('click', (event) => {
+        let category = categoryInput.value;
+        if (validateCategoryInput(category, types_1.tempStorage)) {
+            console.log('valid input');
+            // (1) add new entry to main blocked object
+            updateBlockedObject(types_1.tempStorage, category);
+            // (1.1) set chrome.strage.local with this new data
+            chrome.storage.local.set({ blocked: blockedData.blocked }, () => {
+                console.log("Blocked List Updated:", blockedData.blocked);
+            });
+            // (2) show entry at bottom of grid UI (rapidly clears and repopulates grid)
+            updateBlockedPage(types_1.tempStorage);
+            // (3) update module block count
+            updateModuleBlockCount(blockedData, blockedCountElements);
+        }
+        else {
+            console.log('invalid input');
+            let errorStr = "Duplicate entry. Please try again";
+            invalidCategoryMessage.innerText = errorStr;
+            // show error message
+            invalidCategoryContainer.style.opacity = '1';
+            setTimeout(() => {
+                invalidCategoryContainer.style.opacity = '0';
+            }, 3000);
+        }
+    });
+    // Custom Time page
+    addTimespanBtn.addEventListener('click', () => {
+        var _a;
+        console.log('add time span btn clicked');
+        const inputs = [initialHour, initialMinute, initialAMPM, finalHour, finalMinute, finalAMPM];
+        const inputsValid = checkInputValues(inputs);
+        if (inputsValid) {
+            console.log('All inputs are valid');
+            // Proceed with adding the time span
+            // (2) Determine the time 0ms to (24hrs X ms/ day) for first and last three elements in inputs
+            // Final output for this will be array containing ms for initial and final time
+            let timespanArr = getTimespanArr(inputs);
+            let timespans = blockedData.settings["custom-time"].timeSpans;
+            if (timespans && !isDuplicateTimespan(timespanArr, timespans)) {
+                (_a = blockedData.settings["custom-time"].timeSpans) === null || _a === void 0 ? void 0 : _a.push(timespanArr);
+                // (2.1) set chrome.strage.local with this new settings data
+                chrome.storage.local.set({ settings: blockedData.settings }, () => {
+                    console.log("Settings Updated:", blockedData.settings);
+                });
+                // after successful addition of time span, clear inputs except initialAMPM and finalAMPM
+                inputs.forEach(input => {
+                    if (input !== initialAMPM && input !== finalAMPM) {
+                        input.value = '';
+                    }
+                });
+                initialAMPM.value = 'AM';
+                finalAMPM.value = 'PM';
+            }
+            else {
+                // create error message for duplicate time span
+                alert("Error: Timespan already exists. Try again 😛"); // idgaf, an alert will do
+            }
+            // if user input same time for initial and final, that effectively blocks the websites/ categories at all times
+            // (3) Call function to populate time-spans grid (also called when Dom Content Loads)
+            populateTimespansGrid(blockedData);
+        }
+        else {
+            console.log('Some inputs are missing values');
+        }
+    });
+    // Hyperchill.io Sync Page
+    deepWorkToggle.addEventListener('click', () => {
+        blockedData.settings['hyperchill-sync'].deepWorkToggle = deepWorkToggle.checked;
+        chrome.storage.local.set({ settings: blockedData.settings }, () => {
+            console.log("Settings Updated:", blockedData.settings);
+        });
+    });
+});
+// // // // // // //
+// Helper Functions
+// // // // // // //
+function updateDeepWorkToggleState(blockedData) {
+    let deepWorkToggleState = blockedData.settings['hyperchill-sync'].deepWorkToggle;
+    if (deepWorkToggleState) {
+        deepWorkToggle.checked = true;
+    }
+    else {
+        deepWorkToggle.checked = false;
+    }
+}
+function isDuplicateTimespan(timespanArr, timespans) {
+    for (const timespan of timespans) {
+        if (timespan[0] === timespanArr[0] && timespan[1] === timespanArr[1]) {
+            return true;
+        }
+    }
+    return false;
+}
+function populateTimespansGrid(blockedData) {
+    let timespansArr = blockedData.settings["custom-time"].timeSpans;
+    if (timespansArr) {
+        appendTimespans(timespansArr);
+    }
+}
+function appendTimespans(timespans) {
+    const timespansGrid = document.getElementById('timespans-grid');
+    // Clear Previous Contents of timespans grid
+    timespansGrid.innerHTML = '';
+    timespans.forEach(timespan => {
+        const initialTime = convertMsToTime(timespan[0]);
+        const finalTime = convertMsToTime(timespan[1]);
+        const initialTimeSpan = document.createElement('span');
+        initialTimeSpan.className = 'inline-flex items-center justify-center px-4';
+        initialTimeSpan.textContent = initialTime;
+        const finalTimeSpan = document.createElement('span');
+        finalTimeSpan.className = 'inline-flex items-center justify-center px-4';
+        finalTimeSpan.textContent = finalTime;
+        const buttonDiv = document.createElement('div');
+        buttonDiv.className = 'flex justify-center';
+        const removeButton = document.createElement('button');
+        removeButton.className = 'remove-timespan-btn bg-red-500 text-white p-2 rounded-md w-10';
+        removeButton.textContent = '-';
+        buttonDiv.appendChild(removeButton);
+        timespansGrid.appendChild(initialTimeSpan);
+        timespansGrid.appendChild(finalTimeSpan);
+        timespansGrid.appendChild(buttonDiv);
+    });
+}
+function convertTimeToMs(time) {
+    const [timePart, ampm] = time.split(' ');
+    const [hours, minutes] = timePart.split(':').map(Number);
+    const hours24 = ampm === 'PM' && hours !== 12 ? hours + 12 : ampm === 'AM' && hours === 12 ? 0 : hours;
+    return (hours24 * 60 * 60 * 1000) + (minutes * 60 * 1000);
+}
+function convertMsToTime(ms) {
+    const date = new Date(ms);
+    let hours = date.getUTCHours();
+    const minutes = date.getUTCMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+    return `${hours}:${minutesStr} ${ampm}`;
+}
+function getTimespanArr(inputs) {
+    const [initialHour, initialMinute, initialAMPM, finalHour, finalMinute, finalAMPM] = inputs;
+    const convertTo24HourFormat = (hour, ampm) => {
+        if (ampm.toLowerCase() === 'pm' && hour !== 12) {
+            return hour + 12;
+        }
+        else if (ampm.toLowerCase() === 'am' && hour === 12) {
+            return 0;
+        }
+        return hour;
+    };
+    const initialHour24 = convertTo24HourFormat(parseInt(initialHour.value), initialAMPM.value);
+    const finalHour24 = convertTo24HourFormat(parseInt(finalHour.value), finalAMPM.value);
+    const initialTimeInMs = (initialHour24 * 60 * 60 * 1000) + (parseInt(initialMinute.value) * 60 * 1000);
+    const finalTimeInMs = (finalHour24 * 60 * 60 * 1000) + (parseInt(finalMinute.value) * 60 * 1000);
+    return [initialTimeInMs, finalTimeInMs];
+}
+function checkInputValues(inputs) {
+    let allInputsValid = true;
+    inputs.forEach(input => {
+        if (!input.value) {
+            input.style.border = '2px solid red';
+            allInputsValid = false;
+        }
+        else {
+            input.style.border = ''; // Reset border if input has value
+        }
+    });
+    return allInputsValid;
+}
+function updateModuleBlockCount(blockedData, blockedCountElements) {
+    blockedCountElements.hyperchillSyncWebsitesBlocked.innerText = blockedData.blocked["hyperchill-sync"].websites.length + (blockedData.blocked["hyperchill-sync"].websites.length === 1 ? " Site Blocked" : " Sites Blocked");
+    blockedCountElements.hyperchillSyncCategoriesBlocked.innerText = blockedData.blocked["hyperchill-sync"].categories.length + (blockedData.blocked["hyperchill-sync"].categories.length === 1 ? " Category Blocked" : " Categories Blocked");
+    blockedCountElements.allTimeWebsitesBlocked.innerText = blockedData.blocked["all-time"].websites.length + (blockedData.blocked["all-time"].websites.length === 1 ? " Site Blocked" : " Sites Blocked");
+    blockedCountElements.allTimeCategoriesBlocked.innerText = blockedData.blocked["all-time"].categories.length + (blockedData.blocked["all-time"].categories.length === 1 ? " Category Blocked" : " Categories Blocked");
+    blockedCountElements.customTimeWebsitesBlocked.innerText = blockedData.blocked["custom-time"].websites.length + (blockedData.blocked["custom-time"].websites.length === 1 ? " Site Blocked" : " Sites Blocked");
+    blockedCountElements.customTimeCategoriesBlocked.innerText = blockedData.blocked["custom-time"].categories.length + (blockedData.blocked["custom-time"].categories.length === 1 ? " Category Blocked" : " Categories Blocked");
+}
+// update blocked website or category
+function updateBlockedObject(tempStorage, input) {
+    const { blockedModuleId } = tempStorage;
+    if (blockedModuleId === moduleIds[0]) {
+        blockedData.blocked['hyperchill-sync'].websites.push({ value: input, date: Date.now() });
+    }
+    else if (blockedModuleId === moduleIds[1]) {
+        blockedData.blocked['hyperchill-sync'].categories.push({ value: input, date: Date.now() });
+    }
+    else if (blockedModuleId === moduleIds[2]) {
+        blockedData.blocked['all-time'].websites.push({ value: input, date: Date.now() });
+    }
+    else if (blockedModuleId === moduleIds[3]) {
+        blockedData.blocked['all-time'].categories.push({ value: input, date: Date.now() });
+    }
+    else if (blockedModuleId === moduleIds[4]) {
+        blockedData.blocked['custom-time'].websites.push({ value: input, date: Date.now() });
+    }
+    else if (blockedModuleId === moduleIds[5]) {
+        blockedData.blocked['custom-time'].categories.push({ value: input, date: Date.now() });
+    }
+    else {
+        console.warn(`Unhandled module ID: ${blockedModuleId}`);
+    }
+}
+function validateCategoryInput(category, tempStorage) {
+    const { blockedModuleId } = tempStorage;
+    let blockedCategoryData;
+    if (blockedModuleId === moduleIds[1]) {
+        blockedCategoryData = blockedData.blocked['hyperchill-sync'].categories;
+    }
+    else if (blockedModuleId === moduleIds[3]) {
+        blockedCategoryData = blockedData.blocked['all-time'].categories;
+    }
+    else if (blockedModuleId === moduleIds[5]) {
+        blockedCategoryData = blockedData.blocked['custom-time'].categories;
+    }
+    else {
+        console.warn(`Unhandled module ID: ${blockedModuleId}`);
+    }
+    if (blockedCategoryData) {
+        for (const item of blockedCategoryData) {
+            if (item.value === category) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+function validateWebsiteInput(domain, tempStorage) {
+    const domainPattern = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/;
+    let patternTest = domainPattern.test(domain);
+    const { blockedModuleId } = tempStorage;
+    let blockedWebsiteData;
+    let duplicateWebsiteTest = true;
+    if (blockedModuleId === 'hyperchill-sync-websites-module') {
+        blockedWebsiteData = blockedData.blocked['hyperchill-sync'].websites;
+    }
+    else if (blockedModuleId === 'all-time-websites-module') {
+        blockedWebsiteData = blockedData.blocked['all-time'].websites;
+    }
+    else if (blockedModuleId === 'custom-time-websites-module') {
+        blockedWebsiteData = blockedData.blocked['custom-time'].websites;
+    }
+    else {
+        console.warn(`Unhandled module ID: ${blockedModuleId}`);
+    }
+    blockedWebsiteData === null || blockedWebsiteData === void 0 ? void 0 : blockedWebsiteData.forEach((item) => {
+        if (item.value === domain) {
+            duplicateWebsiteTest = false;
+        }
+    });
+    let lengthTest = true;
+    if (domain.length > 253) {
+        lengthTest = false;
+    }
+    let errorType = null;
+    if (!patternTest || !lengthTest) {
+        errorType = 'invalid-input';
+    }
+    else if (!duplicateWebsiteTest) {
+        errorType = 'duplicate-website';
+    }
+    return [patternTest && duplicateWebsiteTest && lengthTest, errorType];
+}
+function updateBlockedPage(tempStorage) {
+    // Clear Previous Contents of blocked grid
+    blockedGrid.innerHTML = '';
+    blockedModuleId = tempStorage.blockedModuleId;
+    if (blockedModuleId !== null) {
+        // populate blockedGrid
+        let blockedArr = storageDict[blockedModuleId];
+        blockedArr === null || blockedArr === void 0 ? void 0 : blockedArr.forEach((item) => {
+            const blockedValueDiv = document.createElement('div');
+            blockedValueDiv.textContent = item.value;
+            blockedValueDiv.className = 'break-words'; // that should be fine
+            const timeSinceValueDiv = document.createElement('div');
+            timeSinceValueDiv.textContent = getTimeStrFromDate(item.date); // Assuming a static value for demonstration
+            const buttonDiv = document.createElement('div');
+            const removeButton = document.createElement('button');
+            removeButton.className = 'remove-btn bg-red-500 text-white p-1 rounded';
+            removeButton.textContent = 'Remove';
+            buttonDiv.appendChild(removeButton);
+            blockedGrid.appendChild(blockedValueDiv);
+            blockedGrid.appendChild(timeSinceValueDiv);
+            blockedGrid.appendChild(buttonDiv);
+        });
+    }
+    else {
+        console.error('blockedModuleId is null');
+    }
+}
+function getTimeStrFromDate(itemDate) {
+    let timeElapsed = Date.now() - itemDate;
+    const seconds = Math.floor(timeElapsed / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+    const weeks = Math.floor(days / 7);
+    const years = Math.floor(days / 365);
+    if (years > 0) {
+        return `${years} year${years > 1 ? 's' : ''}`;
+    }
+    else if (weeks > 0) {
+        return `${weeks} week${weeks > 1 ? 's' : ''}`;
+    }
+    else if (days > 0) {
+        return `${days} day${days > 1 ? 's' : ''}`;
+    }
+    else if (hours > 0) {
+        return `${hours} hour${hours > 1 ? 's' : ''}`;
+    }
+    else if (minutes > 0) {
+        return `${minutes} minute${minutes > 1 ? 's' : ''}`;
+    }
+    else {
+        return `${seconds} second${seconds > 1 ? 's' : ''}`;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/types.ts":
+/*!**********************!*\
+  !*** ./src/types.ts ***!
+  \**********************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.tempStorage = void 0;
+exports.tempStorage = {
+    contentsId: null,
+    blockedModuleId: null
+};
+
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
+(() => {
+var exports = __webpack_exports__;
+/*!************************!*\
+  !*** ./src/options.ts ***!
+  \************************/
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+// Import statements
+const content_1 = __webpack_require__(/*! ./content */ "./src/content.ts");
+const types_1 = __webpack_require__(/*! ./types */ "./src/types.ts");
+document.addEventListener('DOMContentLoaded', () => {
+    const hyperchillSyncModule = document.getElementById('hyperchill-sync-module');
+    const allTimeModule = document.getElementById('all-time-module');
+    const customTimeModule = document.getElementById('custom-time-module');
+    const homeContents = document.getElementById('home-contents');
+    const hyperchillSyncContents = document.getElementById('hyperchill-sync-contents');
+    const allTimeContents = document.getElementById('all-time-contents');
+    const customTimeContents = document.getElementById('custom-time-contents');
+    const backBtns = document.querySelectorAll('.back-btn');
+    // Hyperchill.io Sync
+    const hyperchillSyncWebsitesModule = document.getElementById('hyperchill-sync-websites-module');
+    const hyperchillSyncCategoriesModule = document.getElementById('hyperchill-sync-categories-module');
+    // All Time Contents
+    const allTimeWebsitesModule = document.getElementById('all-time-websites-module');
+    const allTimeCategoriesModule = document.getElementById('all-time-categories-module');
+    // Custom Time Contents
+    const customTimeWebsitesModule = document.getElementById('custom-time-websites-module');
+    const customTimeCategoriesModule = document.getElementById('custom-time-categories-module');
+    // Blocked page
+    const blockedPageType = document.getElementById('blocked-page-type');
+    const websiteCategory = document.getElementById('website-category');
+    const websiteInputContainer = document.getElementById('website-input-container');
+    const categoryInputContainer = document.getElementById('category-input-container');
+    const blockedPageElements = {
+        blockedPageType,
+        websiteCategory,
+        websiteInputContainer,
+        categoryInputContainer
+    };
+    const modules = [
+        [hyperchillSyncWebsitesModule, hyperchillSyncContents],
+        [hyperchillSyncCategoriesModule, hyperchillSyncContents],
+        [allTimeWebsitesModule, allTimeContents],
+        [allTimeCategoriesModule, allTimeContents],
+        [customTimeWebsitesModule, customTimeContents],
+        [customTimeCategoriesModule, customTimeContents]
+    ];
+    // Blocked Page
+    const blockedPage = document.getElementById('blocked-page');
+    const contents = [
+        homeContents,
+        hyperchillSyncContents,
+        allTimeContents,
+        customTimeContents
+    ];
+    hyperchillSyncModule.addEventListener('click', () => {
+        displayContents(hyperchillSyncContents, contents, types_1.tempStorage);
+    });
+    allTimeModule.addEventListener('click', () => {
+        // Open New Page
+        displayContents(allTimeContents, contents, types_1.tempStorage);
+    });
+    customTimeModule.addEventListener('click', () => {
+        // Open New Page
+        displayContents(customTimeContents, contents, types_1.tempStorage);
+    });
+    modules.forEach(([module, contents]) => {
+        module.addEventListener('click', () => {
+            types_1.tempStorage.blockedModuleId = module.id; // 1st
+            hideDisplayPage(contents, blockedPage); // 2nd
+            // Dynamic adjustments
+            populateBlockedPage(modules, blockedPageElements);
+        });
+    });
+    backBtns.forEach((backBtn) => {
+        backBtn.addEventListener('click', () => {
+            if (backBtn.id == 'blocked-page-back-btn') {
+                // Return to the previously selected option (HC Sync, All Time, or Custom Time)
+                if (types_1.tempStorage.contentsId) {
+                    let prevContentsPage = document.getElementById(types_1.tempStorage.contentsId);
+                    if (prevContentsPage) {
+                        hideDisplayPage(blockedPage, prevContentsPage);
+                    }
+                }
+            }
+            else {
+                displayContents(homeContents, contents, types_1.tempStorage);
+            }
+        });
+    });
+    // // // // // // //
+    // Helper Functions
+    // // // // // // //
+    function populateBlockedPage(modules, blockedPageElements) {
+        // Hyperchill.io Sync Websites
+        if (types_1.tempStorage.blockedModuleId === modules[0][0].id) {
+            populateHyperchillSyncWebsites(blockedPageElements);
+        }
+        else if (types_1.tempStorage.blockedModuleId === modules[1][0].id) {
+            populateHyperchillSyncCategories(blockedPageElements);
+        }
+        else if (types_1.tempStorage.blockedModuleId === modules[2][0].id) {
+            populateAllTimeWebsites(blockedPageElements);
+        }
+        else if (types_1.tempStorage.blockedModuleId === modules[3][0].id) {
+            populateAllTimeCategories(blockedPageElements);
+        }
+        else if (types_1.tempStorage.blockedModuleId === modules[4][0].id) {
+            populateCustomTimeWebsites(blockedPageElements);
+        }
+        else if (types_1.tempStorage.blockedModuleId === modules[5][0].id) {
+            populateCustomTimeCategories(blockedPageElements);
+        }
+        (0, content_1.updateBlockedPage)(types_1.tempStorage); // Dynamically update blocked page w/ user-specific data
+        console.log(types_1.tempStorage.blockedModuleId);
+    }
+    function populateHyperchillSyncWebsites(blockedPageElements) {
+        blockedPageElements.blockedPageType.innerText = "Blocked Websites | Hyperchill.io Sync";
+        blockedPageElements.websiteCategory.innerText = "Website";
+        showWebsiteInput(blockedPageElements);
+    }
+    function populateHyperchillSyncCategories(blockedPageElements) {
+        blockedPageElements.blockedPageType.innerText = "Blocked Categories | Hyperchill.io Sync";
+        blockedPageElements.websiteCategory.innerText = "Category";
+        showCategoryInput(blockedPageElements);
+    }
+    function populateAllTimeWebsites(blockedPageElements) {
+        blockedPageElements.blockedPageType.innerText = "Blocked Websites | All Time";
+        blockedPageElements.websiteCategory.innerText = "Website";
+        showWebsiteInput(blockedPageElements);
+    }
+    function populateAllTimeCategories(blockedPageElements) {
+        blockedPageElements.blockedPageType.innerText = "Blocked Categories | All Time";
+        blockedPageElements.websiteCategory.innerText = "Category";
+        showCategoryInput(blockedPageElements);
+    }
+    function populateCustomTimeWebsites(blockedPageElements) {
+        blockedPageElements.blockedPageType.innerText = "Blocked Websites | Custom Time";
+        blockedPageElements.websiteCategory.innerText = "Website";
+        showWebsiteInput(blockedPageElements);
+    }
+    function populateCustomTimeCategories(blockedPageElements) {
+        blockedPageElements.blockedPageType.innerText = "Blocked Categories | Custom Time";
+        blockedPageElements.websiteCategory.innerText = "Category";
+        showCategoryInput(blockedPageElements);
+    }
+    function showCategoryInput(blockedPageElements) {
+        blockedPageElements.websiteInputContainer.classList.replace('flex', 'hidden');
+        blockedPageElements.categoryInputContainer.classList.replace('hidden', 'flex');
+    }
+    function showWebsiteInput(blockedPageElements) {
+        blockedPageElements.categoryInputContainer.classList.replace('flex', 'hidden');
+        blockedPageElements.websiteInputContainer.classList.replace('hidden', 'flex');
+    }
+    // Deals with opening/ closing Hyperchill.io Sync, All Time, and Custom Time pages and the final Blocked Page
+    function hideDisplayPage(hidePage, displayPage) {
+        hidePage.classList.replace('flex', 'hidden');
+        displayPage.classList.replace('hidden', 'flex');
+    }
+    // Deals with showing/ hiding pages when initial modules are selected (e.g. Hyperchill.io Sync, All Time, and Custom Time)
+    function displayContents(element, contents, tempStorage) {
+        contents.forEach(content => {
+            if (content === element) {
+                content.classList.replace('hidden', 'flex');
+            }
+            else {
+                content.classList.replace('flex', 'hidden');
+            }
+        });
+        tempStorage.contentsId = element.id;
+    }
+});
+
+})();
+
+/******/ })()
+;
+//# sourceMappingURL=options.js.map

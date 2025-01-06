@@ -8,58 +8,65 @@
     <link rel="stylesheet" href="fonts.css">
   </head>
   <body class="w-screen h-screen flex justify-center items-center">
-    <div id="main-options-container" class="w-[760px] h-[600px] shadow-2xl rounded-[15px] bg-white">
+
+    
+    <div id="main-options-container" class="w-[760px] h-[600px] shadow-2xl rounded-[15px] bg-white relative">
+      <img src="icons/kitty8.png" class="absolute top-[-45px] right-16 w-auto h-20">
       <div id="header" class="flex justify-center items-center px-2 p-2">
         <img id="hyperchill-icon" src="icons/icon48.png" class="w-8 h-8">
         <h1 class="text-2xl font-bold text-black p-2 font-settingsHeaderFont">Hyperchill Website Blocker</h1>
       </div>
 
-      <hr class="mx-4">
+      <hr>
 
-      <div id="contents" class=" w-full h-[calc(100%-64px)] font-settingsHeaderFont p-2">
-
-
-
-        <div id="home-contents" class="flex w-full h-full justify-center items-center">
-          <div id="home-contents-main" class="flex w-full justify-around">
-            <div id="hyperchill-sync-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300">
-              <div id="hyperchill-sync-module-title" class="text-center">
-              <b>Hyperchill.io Sync</b>
-              </div>
-              <hr class="my-1">
-              <div id="hyperchill-sync-module-description">
-              Conditionally block sites based on current session running in Hyperchill.io
+      <div id="contents" class=" w-full h-[calc(100%-64px)] font-settingsHeaderFont">
+        <div id="home-contents" class="flex w-full h-full justify-center items-center flex-col">
+            <div id="login-container" class="relative w-full h-1/4 h-max-1/3 overflow-hidden">
+              <img src="icons/ocean.jpg" class="object-center object-cover w-full h-full blur-md transform scale-110">
+              <button class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#700cce] text-white p-2 rounded-md text-lg">Log in through Hyperchill.io</button>
+              <div class="absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white p-2 rounded-md text-md mt-2">
+                Logging in will enable Hyperchill.io Session Sync functionality
               </div>
             </div>
-            <div id="all-time-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300">
-              <div id="all-time-module-title" class="text-center">
-                <b>All Time</b>
+          <div id="home-contents-main" class="flex w-full h-3/4 mt-4">
+            <div id="modules-container" class="w-full flex justify-around max-h-36">
+              <div id="hyperchill-sync-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300">
+                <div id="hyperchill-sync-module-title" class="text-center">
+                  <b>Hyperchill.io Sync</b>
+                </div>
+                <hr class="my-1">
+                <div id="hyperchill-sync-module-description">
+                  Conditionally block sites when a session is running in Hyperchill.io
+                </div>
               </div>
-              <hr class="my-1">
-              <div id="all-time-module-description">
-                Block sites at all times
+              <div id="all-time-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300">
+                <div id="all-time-module-title" class="text-center">
+                  <b>All Time</b>
+                </div>
+                <hr class="my-1">
+                <div id="all-time-module-description">
+                  Block sites at all times
+                </div>
               </div>
-            </div>
-            <div id="custom-time-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300">
-              <div id="custom-time-module-title" class="text-center">
-                <b>Custom Time</b>
-              </div>
-              <hr class="my-1">
-              <div id="custom-time-module-description">
-                Block sites during custom time spans
+              <div id="custom-time-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300">
+                <div id="custom-time-module-title" class="text-center">
+                  <b>Custom Time</b>
+                </div>
+                <hr class="my-1">
+                <div id="custom-time-module-description">
+                  Block sites during custom time spans
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-
 
         <div id="hyperchill-sync-contents" class="hidden w-full h-full justify-center flex-col">
           <div class="nav-bar flex items-center w-full justify-between p-2">
             <img src="icons/left-arrow-261369.png" class="back-btn w-8 h-8 transition-transform duration-300 ease-in-out transform hover:-translate-x-1 cursor-pointer">
             <div class="text-xl">Hyperchill.io Sync</div>
           </div>
-          <div id="hyperchill-sync-contents-menu" class="flex w-full h-full justify-around items-center">
+          <div id="hyperchill-sync-contents-menu" class="flex w-full h-full justify-start items-center flex-col p-2">
             <div id="hyperchill-sync-contents-module-container" class="flex w-full justify-center">
               <div id="hyperchill-sync-websites-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300 mr-6">
                 <div id="hyperchill-sync-websites-module-title" class="text-center">
@@ -80,6 +87,17 @@
                 </div>
               </div>
             </div>
+            <div id="deep-work-toggle-container" class="flex w-auto mt-5 p-4 text-lg border-4 rounded-[15px]">
+                <div id="deep-work-toggle-input-container" class="toggle-container">
+                  <input type="checkbox" id="deepWorkToggle" class="toggle-checkbox">
+                  <label for="deepWorkToggle" data-testid="deepWorkToggleLabel" id="deepWorkToggleLabel" class="toggle-label">
+                      <span id="deepWorkToggleBall" class="toggle-ball"></span>
+                  </label>
+                </div>
+                <div>
+                  Block sites during Deep Work intervals only
+                </div>
+            </div>
           </div>
         </div>
 
@@ -88,7 +106,7 @@
             <img src="icons/left-arrow-261369.png" class="back-btn w-8 h-8 transition-transform duration-300 ease-in-out transform hover:-translate-x-1 cursor-pointer">
             <div class="text-xl">All Time</div>
           </div>
-          <div id="all-time-contents-menu" class="flex w-full h-full justify-around items-center">
+          <div id="all-time-contents-menu" class="flex w-full h-full justify-start items-center flex-col p-2">
             <div id="all-time-contents-module-container" class="flex w-full justify-center">
               <div id="all-time-websites-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300 mr-6">
                 <div id="all-time-websites-module-title" class="text-center">
@@ -117,7 +135,7 @@
             <img src="icons/left-arrow-261369.png" class="back-btn w-8 h-8 transition-transform duration-300 ease-in-out transform hover:-translate-x-1 cursor-pointer">
             <div class="text-xl">Custom Time</div>
           </div>
-          <div id="custom-time-contents-menu" class="flex w-full h-full justify-around items-center">
+          <div id="custom-time-contents-menu" class="flex w-full h-full justify-start items-center flex-col p-2">
             <div id="custom-time-contents-module-container" class="flex w-full justify-center">
               <div id="custom-time-websites-module" class="p-2 rounded-[15px] flex flex-col bg-gray-500 bg-opacity-50 w-56 text-lg cursor-pointer border-4 border-transparent hover:border-[#700cce] transition-all duration-300 mr-6">
                 <div id="custom-time-websites-module-title" class="text-center">
@@ -138,6 +156,41 @@
                 </div>
               </div>
             </div>
+            
+            <div id="custom-time-spans-container" class="w-full mt-5 p-1">
+              <div id="time-span-creation-container" class="flex justify-around items-center py-4 text-lg border-4 rounded-[15px]">
+                <input type="number" id="initial-hour" class="border p-2 rounded-md w-16" placeholder="HH" min="1" max="12">
+                <span class="m-[-20px]">:</span>
+                <input type="number" id="initial-minute" class="border p-2 rounded-md w-16" placeholder="MM" min="0" max="59">
+                <select id="initial-ampm" class="border p-2 rounded-md">
+                  <option value="AM" selected>AM</option>
+                  <option value="PM">PM</option>
+                </select>
+                <span class="mx-2">to</span>
+                <input type="number" id="final-hour" class="border p-2 rounded-md w-16" placeholder="HH" min="1" max="12">
+                <span class="m-[-20px]">:</span>
+                <input type="number" id="final-minute" class="border p-2 rounded-md w-16" placeholder="MM" min="0" max="59">
+                <select id="final-ampm" class="border p-2 rounded-md">
+                  <option value="AM">AM</option>
+                  <option value="PM" selected>PM</option>
+                </select>
+                <button id="add-timespan-btn" class="bg-[#700cce] text-white p-2 rounded-md w-10">+</button>
+              </div>
+              <div id="timespans-container" class="w-full mt-5 max-h-[234px] py-4 text-lg border-4 rounded-[15px] overflow-y-scroll scrollbar-style">
+                <div class="grid grid-cols-3 gap-4 text-center font-bold mb-2">
+                  <div>Initial Time</div>
+                  <div>Final Time</div>
+                  <div>Remove</div>
+                </div>
+                <div id="timespans-grid" class="grid grid-cols-3 gap-4 text-center mt-2">
+                  <!-- <span class="inline-flex items-center justify-center px-4">8:00 AM</span>
+                  <span class="inline-flex items-center justify-center px-4">5:00 PM</span>
+                  <div class="flex justify-center">
+                    <button class="remove-timespan-btn bg-red-500 text-white p-2 rounded-md w-10">-</button>
+                  </div> -->
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -146,36 +199,45 @@
             <img id="blocked-page-back-btn" src="icons/left-arrow-261369.png" class="back-btn w-8 h-8 transition-transform duration-300 ease-in-out transform hover:-translate-x-1 cursor-pointer">
             <div id="blocked-page-type" class="text-xl"></div>
           </div>
-          <div id="blocked-page-contents" class="flex w-full h-full border-4 border-blue-500 border-opacity-0 flex-col">
+          <div id="blocked-page-contents" class="flex w-full h-full border-4 border-blue-500 border-opacity-0 flex-col p-2">
 
             <div class="flex justify-center text-base py-4">
-              <div id="website-input-container" class="flex justify-center">
+              <div id="website-input-container" class="flex justify-center relative">
                 <input id="website-input" type="text" placeholder="example.com" class="border p-2 rounded-l-md w-64">
-                <button id="block-website-btn" class="bg-[#700cce] text-white p-2 rounded-r-md">Block</button>
+                <button type="submit" id="block-website-btn" class="bg-[#700cce] text-white p-2 rounded-r-md">Block</button>
+                <div id="invalid-website-container" class="absolute p-4 border-4 rounded-[15px] left-0 top-14 bg-white opacity-0 transition-opacity duration-500">
+                  <div class="absolute top-[-18px] left-4 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-b-[15px] border-gray-200"></div>
+                  <div id="invalid-website-message"></div>
+                </div>
               </div>
-              <div id="category-input-container" class="hidden justify-center">
-                <select id="website-input" class="border p-2 rounded-l-md w-64">
+              <div id="category-input-container" class="hidden justify-center relative">
+                <select id="category-input" class="border p-2 rounded-l-md w-64">
                   <option value="adult">Adult</option>
                   <option value="social-media">Social</option>
                   <option value="news">News</option>
-                  <option value="entertainment">Sports</option>
-                  <option value="entertainment">Gambling</option>
-                  <option value="entertainment">Shopping</option>
+                  <option value="sports">Sports</option>
+                  <option value="gambling">Gambling</option>
+                  <option value="shopping">Shopping</option>
                 </select>
                 <button id="block-category-btn" class="bg-[#700cce] text-white p-2 rounded-r-md">Block</button>
+
+                <div id="invalid-category-container" class="absolute p-4 border-4 rounded-[15px] left-0 top-14 bg-white opacity-0 transition-opacity duration-500">
+                  <div class="absolute top-[-18px] left-4 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-b-[15px] border-gray-200"></div>
+                  <div id="invalid-category-message"></div>
+                </div>
               </div>
             </div>
 
-            <div class="w-full max-h-[390px] py-4 text-lg border-4 rounded-[15px] overflow-y-scroll scrollbar-style">
+            <div class="w-full max-h-[375px] py-4 text-lg border-4 rounded-[15px] overflow-y-scroll scrollbar-style">
               <div class="grid grid-cols-3 gap-4 text-center font-bold mb-2">
                 <div id="website-category"></div>
                 <div>Time Since Blocked</div>
                 <div>Remove</div>
               </div>
-              <div id="blocked-websites-list" class="grid grid-cols-3 gap-4 text-center">
-                <div>example1.com</div>
+              <div id="blocked-grid" class="grid grid-cols-3 gap-4 text-center">
+                <!-- <div>example1.com</div>
                 <div>2 hours</div>
-                <div><button class="remove-btn bg-red-500 text-white p-1 rounded">Remove</button></div>
+                <div><button class="remove-btn bg-red-500 text-white p-1 rounded">Remove</button></div> -->
               </div>
             </div>
           </div>
@@ -186,3 +248,7 @@
     <script src="options.js"></script>
   </body>
 </html>
+
+<!-- <div id="test-div" class="max-w-6xl">
+
+</div> -->
