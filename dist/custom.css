@@ -40,11 +40,25 @@ html {
 }
 
 /* Toggle Design (from HC) */
+#loginSubmitBtn {
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: 2px solid white;
+    outline: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-family: myFontPlain;
+    font-size: 24px;
+    transition: background-color 0.25s ease;
+}
+
 .toggle-container {
     display: flex;
     align-items: center;
     margin-right: 15px;
 }
+
 .toggle-label {
     display: block;
     width: 66px;
@@ -79,4 +93,206 @@ html {
 
 #deepWorkToggle:checked + #deepWorkToggleLabel #deepWorkToggleBall {
     left: 40px;
+}
+
+/* Login Window (from HC) */
+.login-signup-window {
+    height: 80%;
+    min-height: 100px;
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 3px solid red; */
+    z-index: 1;
+}
+
+.login-signup-logo {
+    text-align: center;
+    /* border: 3px solid black; */
+}
+
+.login-signup-text {
+    text-align: center;
+    /* border: 3px solid black; */
+}
+
+.login-signup-input-window {
+    background-color: white;
+    height: 400px;
+    width: 350px;
+    border-radius: 10px;
+    
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center;
+}
+
+#signupInputWindow {
+    height: 300px;
+    padding-bottom: 10px;
+}
+
+#resetPasswordInputWindow {
+    height: 200px;
+    padding-bottom: 10px;
+}
+
+.emailBlock,
+.passwordBlock {
+    margin-bottom: 15px; /* Add some spacing between the blocks */
+    display: flex;
+    flex-direction: column;
+}
+
+.login-signup-input {
+    width: 250px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #dfdfdf;
+    border: 0px;
+    margin-top: -10px;
+}
+
+#signUpEmail, #signUpPassword, #signUpConfirmPassword {
+    margin-top: -20px;
+}
+
+#emailInputSignup {
+    padding-left: 5px;
+}
+
+@media (max-width: 349px) {
+    #loginInputWindow {
+        width: 300px;
+    }
+    #signupInputWindow {
+        width: 300px;
+    }
+}
+
+.googleIcon {
+    width: 20px;
+    height: 20px;
+    padding-right: 10px;
+}
+
+.google-signin-signup-block {
+    margin-bottom: 10px; /* Adjust the margin as needed to move it closer to the top */
+    margin-top: 20px;
+}
+
+.google-signin-signup-btn {
+    display: flex;         /* Convert the button into a flex container */
+    justify-content: space-around;
+    align-items: center;   /* Vertically center the contents */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    height: 50px;
+    width: 250px;
+    font-family: myFontBold;
+    font-size: 14px;
+    color: black;
+}
+
+#signUpEmail {
+    margin-top: 10px;
+}
+
+.hr_or_hr_block {
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Center items vertically */
+    margin-top: 10px;
+}
+
+.or {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: myFontBold;
+    font-size: 14px; 
+    color: gray;
+}
+
+.or_hr {
+    width: 110px;
+    border-color: #ffffff;
+}
+
+.emailBlock > h3 {
+    color: black;
+    font-size: 14px;
+}
+
+.passwordBlock {
+    margin-top: -5px;
+    margin-bottom: 30px;
+}
+
+.passwordBlock > h3 {
+    color: black;
+    font-size: 14px;
+}
+
+#forgotPasswordContainer > h3 {
+    color: black;
+    font-size: 14px;
+}
+
+.login-signup-submit-btn-container {
+    margin-bottom: 10px;
+}
+
+#forgotPassword_h3:hover {
+    cursor: pointer;
+}
+
+#createAccountContainer, #logBackInContainer, #needToGoBackContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.accountRevert {
+    color: white;
+    font-size: 14px;
+    font-family: myFontLight;
+}
+
+#createAccount2_h3:hover, #logBackIn2_h3:hover, #needToGoBackText2_h3:hover{
+    cursor: pointer;
+}
+
+#noAccountText, #logBackInText, #needToGoBackText {
+    margin-bottom: -20px;
+}
+
+#signUpEmail {
+    margin-bottom: 30px;
+}
+
+/* SET NEW PASSWORD PAGE */
+#setNewPasswordInputWindow {
+    height: 300px;
+}
+
+#signUpPassword {
+    margin-top: 10px;
+}
+
+#activationLinkSentWindow, #accountVerifiedWindow, #resetPasswordEmailSentWindow {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+#resetPasswordEmail {
+    margin-bottom: 35px;
+}
+
+/* Overrides btn hover style set in styles.css */
+#loginSubmitBtn:hover, #signupSubmitBtn:hover {
+    color: white;
 }

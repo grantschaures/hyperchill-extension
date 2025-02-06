@@ -8,7 +8,7 @@ module.exports = {
     background: './src/background.ts',
     popup: './src/popup.ts',
     options: './src/options.ts',
-    types: './src/types.ts'
+    login: './src/login.ts'
   },
 
   // Enable source maps for easier debugging
@@ -55,9 +55,10 @@ module.exports = {
         { from: 'src/icons', to: 'icons' }, // Icons folder
         { from: 'src/popup.html', to: 'popup.html' }, // Popup HTML
         { from: 'src/options.html', to: 'options.html' }, // Options HTML
-        { from: 'src/styles/custom.css', to: 'custom.css' }, // Custom CSS
+        { from: 'src/login.html', to: 'login.html' }, // Login Custom Popup HTML
         { from: 'src/fonts', to: 'fonts' }, // Fonts folder
-        { from: 'src/styles/fonts.css', to: 'fonts.css'}
+        { from: 'src/styles/custom.css', to: 'custom.css' }, // Custom CSS
+        { from: 'src/styles/fonts.css', to: 'fonts.css'} // Fonts CSS
       ]
     }),
     new MiniCssExtractPlugin({

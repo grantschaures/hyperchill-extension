@@ -127,8 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         updateBlockedPage(tempStorage); // Dynamically update blocked page w/ user-specific data
-
-        console.log(tempStorage.blockedModuleId)
     }
 
     function populateHyperchillSyncWebsites(blockedPageElements: BlockedPageElements): void {

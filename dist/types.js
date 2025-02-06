@@ -9,10 +9,15 @@ var exports = __webpack_exports__;
   \**********************/
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.tempStorage = void 0;
+exports.sessionStorage = exports.tempStorage = void 0;
 exports.tempStorage = {
     contentsId: null,
-    blockedModuleId: null
+    blockedModuleId: null,
+    existingWindowId: 12345
+};
+exports.sessionStorage = {
+    loggedIn: false,
+    userEmail: null,
 };
 
 })();

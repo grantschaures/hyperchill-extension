@@ -41,6 +41,11 @@ const finalMinute = document.getElementById('final-minute');
 const finalAMPM = document.getElementById('final-ampm');
 // Hyperchill.io Sync Page
 const deepWorkToggle = document.getElementById('deepWorkToggle');
+// Hyperchill Main Page
+const mainLoginBtn = document.getElementById('main-login-btn');
+const mainLoginMessage = document.getElementById('main-login-message');
+const mainLogoutBtn = document.getElementById('main-logout-btn');
+const mainLogoutMessage = document.getElementById('main-logout-message');
 const blockedCountElements = {
     hyperchillSyncWebsitesBlocked: document.getElementById('hyperchill-sync-websites-blocked'),
     hyperchillSyncCategoriesBlocked: document.getElementById('hyperchill-sync-categories-blocked'),
@@ -83,7 +88,7 @@ const moduleIds = [
     'custom-time-categories-module'
 ];
 document.addEventListener('DOMContentLoaded', () => {
-    chrome.storage.local.get(['blocked', 'settings'], (result) => {
+    chrome.storage.local.get(['blocked', 'settings', 'state'], (result) => {
         blockedData.blocked = result.blocked || {};
         blockedData.settings = result.settings || {};
         // values are references to blocked data
@@ -98,6 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDeepWorkToggleState(blockedData);
         populateTimespansGrid(blockedData);
         updateModuleBlockCount(blockedData, blockedCountElements);
+        // Check if user's JWT is valid and not expired, if it's not then make UI changes to show them logged in
+        if (validateUser()) {
+            updateUI();
+        }
     });
     // Document Event Listeners
     document.addEventListener('click', (event) => {
@@ -266,10 +275,78 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Settings Updated:", blockedData.settings);
         });
     });
+    mainLoginBtn.addEventListener('click', () => {
+        console.log("Main Login Button has been clicked");
+        // If there is an existing window, close it
+        if (types_1.tempStorage.existingWindowId !== null) {
+            chrome.windows.remove(types_1.tempStorage.existingWindowId, () => {
+                console.log(`Closed existing window with ID: ${types_1.tempStorage.existingWindowId}`);
+                types_1.tempStorage.existingWindowId = null; // Reset the window ID
+                createLoginWindow(); // Create the new window after closing the existing one
+            });
+        }
+        else {
+            createLoginWindow(); // Create the new window directly if no window is open
+        }
+    });
+    // This function opens a login window (Login.ts RUNS IN DISTINCT EXECUTION ENVIRONMENT)
+    function createLoginWindow() {
+        chrome.windows.create({
+            url: chrome.runtime.getURL('dist/login.html'),
+            type: 'popup',
+            width: 500,
+            height: 560
+        }, (newWindow) => {
+            if (newWindow === null || newWindow === void 0 ? void 0 : newWindow.id) {
+                types_1.tempStorage.existingWindowId = newWindow.id; // Store the new window's ID
+                console.log(`Created new window with ID: ${types_1.tempStorage.existingWindowId}`);
+            }
+            // Listen for the window being closed
+            chrome.windows.onRemoved.addListener(function (windowId) {
+                if (windowId === types_1.tempStorage.existingWindowId) {
+                    console.log(`Window with ID ${windowId} was closed`);
+                    types_1.tempStorage.existingWindowId = null; // Reset the ID
+                }
+            });
+        });
+    }
+    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+        if (message.type === 'INITIATE_LOGIN_PROCESS') {
+            // set user's email and loggedIn state in appStorage object
+            types_1.appStorage.userEmail = message.email;
+            types_1.appStorage.loggedIn = true;
+            chrome.storage.local.get(null, (result) => {
+                console.log("Contents of chrome.storage.local:", result);
+            });
+            // close popup window
+            if (types_1.tempStorage.existingWindowId !== null) {
+                chrome.windows.remove(types_1.tempStorage.existingWindowId, () => {
+                    console.log(`Closed existing window with ID: ${types_1.tempStorage.existingWindowId}`);
+                    types_1.tempStorage.existingWindowId = null; // Reset the window ID
+                });
+            }
+            sendResponse({ tempStorage: types_1.tempStorage });
+            // UI Updates (home page)
+            updateUI();
+        }
+    });
 });
 // // // // // // //
 // Helper Functions
 // // // // // // //
+function validateUser() {
+    // send request to hyperchill.io backend to verify that token is still valid...!!!!
+    return false;
+}
+function updateUI() {
+    // hide login button and message
+    mainLoginBtn.classList.replace('flex', 'hidden');
+    mainLoginMessage.classList.replace('flex', 'hidden');
+    // show logout button and message
+    mainLogoutBtn.classList.replace('hidden', 'flex');
+    mainLogoutMessage.classList.replace('hidden', 'flex');
+    mainLogoutMessage.innerText = `Welcome ${types_1.appStorage.userEmail}!`;
+}
 function updateDeepWorkToggleState(blockedData) {
     let deepWorkToggleState = blockedData.settings['hyperchill-sync'].deepWorkToggle;
     if (deepWorkToggleState) {
@@ -522,10 +599,15 @@ function getTimeStrFromDate(itemDate) {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.tempStorage = void 0;
+exports.appStorage = exports.tempStorage = void 0;
 exports.tempStorage = {
     contentsId: null,
-    blockedModuleId: null
+    blockedModuleId: null,
+    existingWindowId: null
+};
+exports.appStorage = {
+    loggedIn: false,
+    userEmail: null,
 };
 
 
@@ -674,7 +756,6 @@ document.addEventListener('DOMContentLoaded', () => {
             populateCustomTimeCategories(blockedPageElements);
         }
         (0, content_1.updateBlockedPage)(types_1.tempStorage); // Dynamically update blocked page w/ user-specific data
-        console.log(types_1.tempStorage.blockedModuleId);
     }
     function populateHyperchillSyncWebsites(blockedPageElements) {
         blockedPageElements.blockedPageType.innerText = "Blocked Websites | Hyperchill.io Sync";

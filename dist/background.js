@@ -56,6 +56,17 @@ chrome.runtime.onInstalled.addListener(() => {
             console.log("Settings object exists:", result.settings);
         }
     });
+    chrome.storage.local.get("state", (result) => {
+        if (!result.state) {
+            const state = { jwt: null, userEmail: null };
+            chrome.storage.local.set({ state }, () => {
+                console.log("State initialized:", state);
+            });
+        }
+        else {
+            console.log("State object exists:", result.state);
+        }
+    });
 });
 
 /******/ })()

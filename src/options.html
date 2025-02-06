@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <title>Options</title>
+    <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" href="custom.css">
-    <link rel="stylesheet" href="fonts.css">
   </head>
   <body class="w-screen h-screen flex justify-center items-center">
 
@@ -14,7 +14,7 @@
       <img src="icons/kitty8.png" class="absolute top-[-45px] right-16 w-auto h-20">
       <div id="header" class="flex justify-center items-center px-2 p-2">
         <img id="hyperchill-icon" src="icons/icon48.png" class="w-8 h-8">
-        <h1 class="text-2xl font-bold text-black p-2 font-settingsHeaderFont">Hyperchill Website Blocker</h1>
+        <h1 class="text-2xl font-bold text-black p-2 font-settingsHeaderFontBold">Hyperchill Website Blocker</h1>
       </div>
 
       <hr>
@@ -23,9 +23,13 @@
         <div id="home-contents" class="flex w-full h-full justify-center items-center flex-col">
             <div id="login-container" class="relative w-full h-1/4 h-max-1/3 overflow-hidden">
               <img src="icons/ocean.jpg" class="object-center object-cover w-full h-full blur-md transform scale-110">
-              <button class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#700cce] text-white p-2 rounded-md text-lg">Log in through Hyperchill.io</button>
-              <div class="absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white p-2 rounded-md text-md mt-2">
+              <button id="main-login-btn" class="flex absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#700cce] text-white p-2 rounded-md text-lg">Log in through Hyperchill.io</button>
+              <button id="main-logout-btn" class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#700cce] text-white p-2 rounded-md text-lg">Log out</button>
+              <div id="main-login-message" class="flex absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white p-2 rounded-md text-md mt-2">
                 Logging in will enable Hyperchill.io Session Sync functionality
+              </div>
+              <div id="main-logout-message" class="hidden absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white p-2 rounded-md text-md mt-2">
+                <!-- Welcome grantschaures32@gmail.com! -->
               </div>
             </div>
           <div id="home-contents-main" class="flex w-full h-3/4 mt-4">

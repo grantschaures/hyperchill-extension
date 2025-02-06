@@ -6,7 +6,7 @@
 //     This will populate blocked page
 // (3) Define callback functions for blocking a website/ category and removing from list
 
-import { TempStorage, tempStorage } from "./types"
+import { TempStorage, tempStorage, appStorage, AppStorage } from "./types"
 
 // ✅ Declare storageDict in the global scope
 let storageDict: Record<string, Item[] | undefined> = {};
@@ -35,6 +35,12 @@ const finalAMPM = document.getElementById('final-ampm') as HTMLInputElement;
 
 // Hyperchill.io Sync Page
 const deepWorkToggle = document.getElementById('deepWorkToggle') as HTMLInputElement;
+
+// Hyperchill Main Page
+const mainLoginBtn = document.getElementById('main-login-btn') as HTMLButtonElement;
+const mainLoginMessage = document.getElementById('main-login-message') as HTMLElement;
+const mainLogoutBtn = document.getElementById('main-logout-btn') as HTMLButtonElement;
+const mainLogoutMessage = document.getElementById('main-logout-message') as HTMLElement;
 
 type BlockedCount = {
     hyperchillSyncWebsitesBlocked: HTMLElement;
@@ -104,7 +110,7 @@ const moduleIds: ModuleId[] = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    chrome.storage.local.get(['blocked', 'settings'], (result) => {
+    chrome.storage.local.get(['blocked', 'settings', 'state'], (result) => {
         blockedData.blocked = result.blocked || {};
         blockedData.settings = result.settings || {};
 
@@ -121,6 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDeepWorkToggleState(blockedData);
         populateTimespansGrid(blockedData);
         updateModuleBlockCount(blockedData, blockedCountElements);
+
+        // Check if user's JWT is valid and not expired, if it's not then make UI changes to show them logged in
+        if (validateUser()) {
+            updateUI();
+        }
+
     });
 
     // Document Event Listeners
@@ -321,11 +333,96 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Settings Updated:", blockedData.settings);
         });
     });
+
+    mainLoginBtn.addEventListener('click', () => {
+        console.log("Main Login Button has been clicked");
+    
+        // If there is an existing window, close it
+        if (tempStorage.existingWindowId !== null) {
+            chrome.windows.remove(tempStorage.existingWindowId, () => {
+                console.log(`Closed existing window with ID: ${tempStorage.existingWindowId}`);
+                tempStorage.existingWindowId = null; // Reset the window ID
+                createLoginWindow(); // Create the new window after closing the existing one
+            });
+        } else {
+            createLoginWindow(); // Create the new window directly if no window is open
+        }
+    });
+    
+    // This function opens a login window (Login.ts RUNS IN DISTINCT EXECUTION ENVIRONMENT)
+    function createLoginWindow(): void {
+        chrome.windows.create(
+            {
+                url: chrome.runtime.getURL('dist/login.html'),
+                type: 'popup',
+                width: 500,
+                height: 560
+            },
+            (newWindow) => {
+                if (newWindow?.id) {
+                    tempStorage.existingWindowId = newWindow.id; // Store the new window's ID
+                    console.log(`Created new window with ID: ${tempStorage.existingWindowId}`);
+                }
+
+                // Listen for the window being closed
+                chrome.windows.onRemoved.addListener(function(windowId) {
+                    if (windowId === tempStorage.existingWindowId) {
+                        console.log(`Window with ID ${windowId} was closed`);
+                        tempStorage.existingWindowId = null; // Reset the ID
+                    }
+                });
+            }
+        );
+    }
+
+    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+        if (message.type === 'INITIATE_LOGIN_PROCESS') {
+
+            // set user's email and loggedIn state in appStorage object
+            appStorage.userEmail = message.email;
+            appStorage.loggedIn = true;
+
+            chrome.storage.local.get(null, (result) => {
+                console.log("Contents of chrome.storage.local:", result);
+            });
+
+            // close popup window
+            if (tempStorage.existingWindowId !== null) {
+                chrome.windows.remove(tempStorage.existingWindowId, () => {
+                    console.log(`Closed existing window with ID: ${tempStorage.existingWindowId}`);
+                    tempStorage.existingWindowId = null; // Reset the window ID
+                });
+            }
+            sendResponse({ tempStorage });
+
+            // UI Updates (home page)
+            updateUI();
+
+        }
+    });
 });
 
 // // // // // // //
 // Helper Functions
 // // // // // // //
+function validateUser(): boolean {
+    // send request to hyperchill.io backend to verify that token is still valid...!!!!
+
+
+    return false;
+}
+
+function updateUI(): void {
+    // hide login button and message
+    mainLoginBtn.classList.replace('flex', 'hidden');
+    mainLoginMessage.classList.replace('flex', 'hidden');
+
+    // show logout button and message
+    mainLogoutBtn.classList.replace('hidden', 'flex');
+    mainLogoutMessage.classList.replace('hidden', 'flex');
+    mainLogoutMessage.innerText = `Welcome ${appStorage.userEmail}!`;
+}
+
 
 function updateDeepWorkToggleState(blockedData: BlockedData): void {
     let deepWorkToggleState = blockedData.settings['hyperchill-sync'].deepWorkToggle;
@@ -480,7 +577,7 @@ function validateCategoryInput(category: string, tempStorage: TempStorage): bool
     
     if (blockedModuleId === moduleIds[1]) {
         blockedCategoryData = blockedData.blocked['hyperchill-sync'].categories;
-    }else if (blockedModuleId === moduleIds[3]) {
+    } else if (blockedModuleId === moduleIds[3]) {
         blockedCategoryData = blockedData.blocked['all-time'].categories;
     } else if (blockedModuleId === moduleIds[5]) {
         blockedCategoryData = blockedData.blocked['custom-time'].categories;

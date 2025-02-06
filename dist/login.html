@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="custom.css">
+</head>
+<body style="display: flex; align-items: center; flex-direction: column; margin-top: 25px;">
+    <div id="loginInputWindow" class="login-signup-input-window">
+        <div id="googleSignInBlock" class="google-signin-signup-block">
+            <div id="g_id_onload"
+                data-client_id="234799271389-bk46do1l3pnvci922g3dmmf5cc8cfpfb.apps.googleusercontent.com"
+                data-context="signin"
+                data-text="signin_with"
+                data-callback="handleCredentialResponse">
+            </div>
+            <div class="g_id_signin" data-type="standard"></div>
+        </div>
+        <div class="hr_or_hr_block">
+            <hr class="or_hr">
+            <div class="or">
+                or
+            </div>
+            <hr class="or_hr">
+        </div>
+        <div class="emailBlock" id="signInEmail">
+            <h3 id="email_h3">Email</h3>
+            <input type="email" id="emailInputSignin" name="email" placeholder="example@mail.com" class="login-signup-input">
+        </div>
+        <div id="passwordBlock" class="passwordBlock">
+            <h3 id="password_h3">Password</h3>
+            <input type="password" id="passwordInput" name="password" class="login-signup-input">
+        </div>
+        <div id="loginSubmitBtnContainer" class="login-signup-submit-btn-container">
+            <button id="loginSubmitBtn" style="background-color: grey">
+                Submit
+            </button>
+        </div>
+        <div id="forgotPasswordContainer">
+            <h3 id="forgotPassword_h3">
+                <a href="https://hyperchill.io/reset-password" target="_blank" rel="noopener noreferrer">Forgot Password</a>
+            </h3>            
+            <!-- Link to /reset-password page -->
+        </div>
+    </div>
+    <div id="createAccountContainer">
+        <div id="noAccountText">
+            <h3 id="createAccount_h3" class="accountRevert">Don't have an account?</h3>
+        </div>
+        <div id="createAccountText">
+            <h3 id="createAccount2_h3" class="accountRevert">
+                <a href="https://hyperchill.io/signup" target="_blank" rel="noopener noreferrer">Create Account</a>
+            </h3>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
